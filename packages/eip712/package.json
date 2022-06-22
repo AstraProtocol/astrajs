@@ -1,7 +1,7 @@
 {
   "name": "asa-eip712",
   "description": "EIP712 transaction creator for Astra.",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
