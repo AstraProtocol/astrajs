@@ -3,13 +3,13 @@ export const MSG_VESTING_TYPES = {
     { name: 'from_address', type: 'string' },
     { name: 'to_address', type: 'string' },
     { name: 'start_time', type: 'Timestamp' },
-    // { name: 'locked_periods', type: 'Period[]' },
+    { name: 'locked_periods', type: 'Period[]' },
     { name: 'vesting_periods', type: 'Period[]' },
     { name: 'merge', type: 'bool' },
   ],
   Timestamp: [
-    { name: 'nanos', type: 'uint256' },
-    { name: 'seconds', type: 'uint256' },
+    { name: 'nanos', type: 'string' },
+    { name: 'seconds', type: 'string' },
   ],
   Period: [
     { name: 'length', type: 'string' },
@@ -41,7 +41,7 @@ export function createMsgVesting(
     seconds: Math.round(time / 1000),
   }
   return {
-    type: 'evmos.vesting.v1.MsgCreateClawbackVestingAccount',
+    type: 'astra.vesting.v1.MsgCreateClawbackVestingAccount',
     value: {
       from_address: fromAddress,
       to_address: toAddress,
