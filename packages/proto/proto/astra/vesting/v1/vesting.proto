@@ -1,11 +1,11 @@
 syntax = "proto3";
-package evmos.vesting.v1;
+package astra.vesting.v1;
 
 import "gogoproto/gogo.proto";
 import "cosmos/vesting/v1beta1/vesting.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/evmos/evmos/v5/x/vesting/types";
+option go_package = "github.com/AstraProtocol/astra/v2/x/vesting/types";
 
 // ClawbackVestingAccount implements the VestingAccount interface. It provides
 // an account that can hold contributions subject to "lockup" (like a
