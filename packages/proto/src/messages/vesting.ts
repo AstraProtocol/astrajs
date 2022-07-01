@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import * as vesting from '../proto/evmos/vesting/v1/tx'
+import * as vesting from '../proto/astra/vesting/v1/tx'
 import * as coin from '../proto/cosmos/base/v1beta1/coin'
 import * as cosmos_vesting from '../proto/cosmos/vesting/v1beta1/vesting'
 import * as googleTs from '../proto/google/protobuf/timestamp'
@@ -16,7 +16,7 @@ export function createMsgVesting(
   //   length: string
   //   amount: { denom: string; amount: string }[]
   // }[],
-  merge: boolean = false,
+  // merge: boolean = false,
 ) {
   const vesting_periods = vestingPeriods.map(
     (v) =>
@@ -37,15 +37,16 @@ export function createMsgVesting(
     seconds: Math.round(time / 1000),
   })
 
-  const message = new vesting.evmos.vesting.v1.MsgCreateClawbackVestingAccount({
+  const message = new vesting.astra.vesting.v1.MsgCreateClawbackVestingAccount({
     from_address: fromAddress,
     to_address: toAddress,
     start_time: tp,
+    lockup_periods: vesting_periods,
     vesting_periods,
-    merge,
+    // merge,
   })
   return {
     message,
-    path: 'evmos.vesting.v1.MsgCreateClawbackVestingAccount',
+    path: 'astra.vesting.v1.MsgCreateClawbackVestingAccount',
   }
 }

@@ -33,7 +33,7 @@
     "start": "node dist/index.js"
   },
   "devDependencies": {
-    "protoc-gen-ts": "^0.8.2"
+    "protoc-gen-ts": "^0.8.4"
   },
   "dependencies": {
     "@types/google-protobuf": "^3.15.5",
