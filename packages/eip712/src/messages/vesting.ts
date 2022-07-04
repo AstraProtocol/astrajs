@@ -44,7 +44,7 @@ export function createMsgVesting(
       from_address: fromAddress,
       to_address: toAddress,
       start_time: tp1,
-      lockup_periods: [],
+      lockup_periods: vestingPeriods,
       vesting_periods: vestingPeriods,
       // merge,
     },
