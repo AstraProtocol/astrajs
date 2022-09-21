@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import * as coin from '../proto/cosmos/base/v1beta1/coin'
+import * as cosmosCoin from '../proto/cosmos/base/v1beta1/coin'
 import * as channel from '../proto/channel/tx'
 
 interface Coin {
@@ -20,7 +20,7 @@ export function createMsgCommitment(
   const message = new channel.channel.channel.MsgCommitment({
     creator,
     from,
-    coinA: new coin.cosmos.base.v1beta1.Coin({
+    coinA: new cosmosCoin.cosmos.base.v1beta1.Coin({
       denom: coinA.denom.toString(),
       amount: coinA.amount.toString(),
     }),
@@ -28,7 +28,7 @@ export function createMsgCommitment(
     blockheight,
     toBHashlock,
     hashcode,
-    coinlock: new coin.cosmos.base.v1beta1.Coin({
+    coinlock: new cosmosCoin.cosmos.base.v1beta1.Coin({
       denom: coinlock.denom.toString(),
       amount: coinlock.amount.toString(),
     }),
@@ -46,20 +46,22 @@ export function createMsgCloseChannel(
   coinA: Coin,
   toB: string,
   coinB: Coin,
+  channelid: string,
 ) {
   const message = new channel.channel.channel.MsgCloseChannel({
     creator,
     from,
     toA,
-    coinA: new coin.cosmos.base.v1beta1.Coin({
+    coinA: new cosmosCoin.cosmos.base.v1beta1.Coin({
       denom: coinA.denom.toString(),
       amount: coinA.amount.toString(),
     }),
     toB,
-    coinB: new coin.cosmos.base.v1beta1.Coin({
+    coinB: new cosmosCoin.cosmos.base.v1beta1.Coin({
       denom: coinB.denom.toString(),
       amount: coinB.amount.toString(),
     }),
+    channelid,
   })
   return {
     message,
@@ -74,20 +76,22 @@ export function createMsgOpenChannel(
   coinA: Coin,
   coinB: Coin,
   multisigAddr: string,
+  sequence: number,
 ) {
   const message = new channel.channel.channel.MsgOpenChannel({
     creator,
     partA,
     partB,
-    coinA: new coin.cosmos.base.v1beta1.Coin({
+    coinA: new cosmosCoin.cosmos.base.v1beta1.Coin({
       denom: coinA.denom.toString(),
       amount: coinA.amount.toString(),
     }),
-    coinB: new coin.cosmos.base.v1beta1.Coin({
+    coinB: new cosmosCoin.cosmos.base.v1beta1.Coin({
       denom: coinB.denom.toString(),
       amount: coinB.amount.toString(),
     }),
     multisigAddr,
+    sequence,
   })
   return {
     message,
@@ -126,5 +130,40 @@ export function createMsgWithdrawTimelock(
   return {
     message,
     path: 'channel.channel.MsgWithdrawTimelock',
+  }
+}
+
+export function createMsgFund(
+  creator: string,
+  from: string,
+  channelid: string,
+  coin: Coin,
+  balanceA: Coin,
+  balanceB: Coin,
+  hashcodeB: string,
+  multisig: string,
+) {
+  const message = new channel.channel.channel.MsgFund({
+    creator,
+    from,
+    channelid,
+    coin: new cosmosCoin.cosmos.base.v1beta1.Coin({
+      denom: coin.denom.toString(),
+      amount: coin.amount.toString(),
+    }),
+    balanceA: new cosmosCoin.cosmos.base.v1beta1.Coin({
+      denom: balanceA.denom.toString(),
+      amount: balanceA.amount.toString(),
+    }),
+    balanceB: new cosmosCoin.cosmos.base.v1beta1.Coin({
+      denom: balanceB.denom.toString(),
+      amount: balanceB.amount.toString(),
+    }),
+    hashcodeB,
+    multisig,
+  })
+  return {
+    message,
+    path: 'channel.channel.MsgFund',
   }
 }

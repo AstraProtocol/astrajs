@@ -61,6 +61,23 @@ export const MSG_WITHDRAW_TIMELOCK = {
   ],
 }
 
+export const MSG_FUND = {
+  MsgValue: [
+    { name: 'creator', type: 'string' },
+    { name: 'from', type: 'string' },
+    { name: 'channelid', type: 'string' },
+    { name: 'coin', type: 'TypeAmount[]' },
+    { name: 'balanceA', type: 'TypeAmount[]' },
+    { name: 'balanceB', type: 'TypeAmount[]' },
+    { name: 'hashcodeB', type: 'string' },
+    { name: 'multisig', type: 'string' },
+  ],
+  TypeAmount: [
+    { name: 'denom', type: 'string' },
+    { name: 'amount', type: 'string' },
+  ],
+}
+
 interface Coin {
   denom: string
   amount: string
@@ -75,7 +92,7 @@ export function createMsgOpenChannel(
   multisigAddr: string,
 ) {
   return {
-    type: 'Astra/MsgOpenChannel',
+    type: 'astra/MsgOpenChannel',
     value: {
       creator,
       partA,
@@ -106,7 +123,7 @@ export function createMsgCloseChannel(
   coinB: Coin,
 ) {
   return {
-    type: 'Astra/MsgCloseChannel',
+    type: 'astra/MsgCloseChannel',
     value: {
       creator,
       from,
@@ -139,7 +156,7 @@ export function createMsgCommitment(
   coinlock: Coin,
 ) {
   return {
-    type: 'Astra/MsgCommitment',
+    type: 'astra/MsgCommitment',
     value: {
       creator,
       from,
@@ -170,7 +187,7 @@ export function createMsgWithdrawHashlock(
   secret: string,
 ) {
   return {
-    type: 'Astra/MsgWithdrawHashlock',
+    type: 'astra/MsgWithdrawHashlock',
     value: {
       creator,
       to,
@@ -186,11 +203,36 @@ export function createMsgWithdrawTimelock(
   index: string,
 ) {
   return {
-    type: 'Astra/MsgWithdrawTimelock',
+    type: 'astra/MsgWithdrawTimelock',
     value: {
       creator,
       to,
       index,
+    },
+  }
+}
+
+export function createMsgFund(
+  creator: string,
+  from: string,
+  channelid: string,
+  coin: Coin,
+  balanceA: Coin,
+  balanceB: Coin,
+  hashcodeB: string,
+  multisig: string,
+) {
+  return {
+    type: 'astra/MsgFund',
+    value: {
+      creator,
+      from,
+      channelid,
+      coin,
+      balanceA,
+      balanceB,
+      hashcodeB,
+      multisig,
     },
   }
 }

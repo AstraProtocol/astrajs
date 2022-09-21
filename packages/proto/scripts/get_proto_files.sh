@@ -13,9 +13,17 @@ rm -rf ethermint
 
 # Astra
 cd /tmp
-git clone -b channel https://github.com/astraprotocol/astra/
+git clone https://github.com/astraprotocol/astra/
 cd astra/
 cp -r ./proto/* $MYFOLDER/proto
 cp -r ./third_party/proto/* $MYFOLDER/proto
 cd /tmp
 rm -rf astra
+
+# Astra Channel
+cd /tmp
+git clone -b dev https://github.com/astraprotocol/channel/
+cd channel/
+cp -r ./proto/* $MYFOLDER/proto
+cd /tmp
+rm -rf channel

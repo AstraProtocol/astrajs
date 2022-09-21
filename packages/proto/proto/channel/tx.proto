@@ -13,6 +13,7 @@ service Msg {
   rpc WithdrawHashlock(MsgWithdrawHashlock) returns (MsgWithdrawHashlockResponse);
   rpc CloseChannel(MsgCloseChannel) returns (MsgCloseChannelResponse);
   rpc OpenChannel(MsgOpenChannel) returns (MsgOpenChannelResponse);
+  rpc Fund(MsgFund) returns (MsgFundResponse);
 // this line is used by starport scaffolding # proto/tx/rpc
 }
 
@@ -57,6 +58,7 @@ message MsgCloseChannel {
   cosmos.base.v1beta1.Coin coinA = 4;
   string toB = 5;
   cosmos.base.v1beta1.Coin coinB = 6;
+  string channelid = 7;
 }
 
 message MsgCloseChannelResponse {
@@ -69,9 +71,26 @@ message MsgOpenChannel {
   cosmos.base.v1beta1.Coin coinA = 4;
   cosmos.base.v1beta1.Coin coinB = 5;
   string multisigAddr = 6;
+  uint64 sequence = 7;
 }
 
 message MsgOpenChannelResponse {
+  string index = 1;
+}
+
+message MsgFund {
+  string creator = 1;
+  string from = 2;
+  string channelid = 3;
+  cosmos.base.v1beta1.Coin coin = 4;
+  cosmos.base.v1beta1.Coin balanceA = 5;
+  cosmos.base.v1beta1.Coin balanceB = 6;
+  string hashcodeB = 7;
+  string multisig = 8;
+}
+
+message MsgFundResponse {
+  string index = 1;
 }
 
 // this line is used by starport scaffolding # proto/tx/message

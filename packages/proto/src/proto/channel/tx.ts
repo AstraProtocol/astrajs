@@ -641,6 +641,7 @@ export namespace channel.channel {
             coinA?: dependency_1.cosmos.base.v1beta1.Coin;
             toB?: string;
             coinB?: dependency_1.cosmos.base.v1beta1.Coin;
+            channelid?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -662,6 +663,9 @@ export namespace channel.channel {
                 }
                 if ("coinB" in data && data.coinB != undefined) {
                     this.coinB = data.coinB;
+                }
+                if ("channelid" in data && data.channelid != undefined) {
+                    this.channelid = data.channelid;
                 }
             }
         }
@@ -701,6 +705,12 @@ export namespace channel.channel {
         set coinB(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 6, value);
         }
+        get channelid() {
+            return pb_1.Message.getField(this, 7) as string;
+        }
+        set channelid(value: string) {
+            pb_1.Message.setField(this, 7, value);
+        }
         static fromObject(data: {
             creator?: string;
             from?: string;
@@ -708,6 +718,7 @@ export namespace channel.channel {
             coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
             toB?: string;
             coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            channelid?: string;
         }) {
             const message = new MsgCloseChannel({});
             if (data.creator != null) {
@@ -728,6 +739,9 @@ export namespace channel.channel {
             if (data.coinB != null) {
                 message.coinB = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinB);
             }
+            if (data.channelid != null) {
+                message.channelid = data.channelid;
+            }
             return message;
         }
         toObject() {
@@ -738,6 +752,7 @@ export namespace channel.channel {
                 coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
                 toB?: string;
                 coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                channelid?: string;
             } = {};
             if (this.creator != null) {
                 data.creator = this.creator;
@@ -757,6 +772,9 @@ export namespace channel.channel {
             if (this.coinB != null) {
                 data.coinB = this.coinB.toObject();
             }
+            if (this.channelid != null) {
+                data.channelid = this.channelid;
+            }
             return data;
         }
         serialize(): Uint8Array;
@@ -775,6 +793,8 @@ export namespace channel.channel {
                 writer.writeString(5, this.toB);
             if (this.coinB !== undefined)
                 writer.writeMessage(6, this.coinB, () => this.coinB.serialize(writer));
+            if (typeof this.channelid === "string" && this.channelid.length)
+                writer.writeString(7, this.channelid);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -801,6 +821,9 @@ export namespace channel.channel {
                         break;
                     case 6:
                         reader.readMessage(message.coinB, () => message.coinB = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 7:
+                        message.channelid = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -863,6 +886,7 @@ export namespace channel.channel {
             coinA?: dependency_1.cosmos.base.v1beta1.Coin;
             coinB?: dependency_1.cosmos.base.v1beta1.Coin;
             multisigAddr?: string;
+            sequence?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -884,6 +908,9 @@ export namespace channel.channel {
                 }
                 if ("multisigAddr" in data && data.multisigAddr != undefined) {
                     this.multisigAddr = data.multisigAddr;
+                }
+                if ("sequence" in data && data.sequence != undefined) {
+                    this.sequence = data.sequence;
                 }
             }
         }
@@ -923,6 +950,12 @@ export namespace channel.channel {
         set multisigAddr(value: string) {
             pb_1.Message.setField(this, 6, value);
         }
+        get sequence() {
+            return pb_1.Message.getField(this, 7) as number;
+        }
+        set sequence(value: number) {
+            pb_1.Message.setField(this, 7, value);
+        }
         static fromObject(data: {
             creator?: string;
             partA?: string;
@@ -930,6 +963,7 @@ export namespace channel.channel {
             coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
             coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
             multisigAddr?: string;
+            sequence?: number;
         }) {
             const message = new MsgOpenChannel({});
             if (data.creator != null) {
@@ -950,6 +984,9 @@ export namespace channel.channel {
             if (data.multisigAddr != null) {
                 message.multisigAddr = data.multisigAddr;
             }
+            if (data.sequence != null) {
+                message.sequence = data.sequence;
+            }
             return message;
         }
         toObject() {
@@ -960,6 +997,7 @@ export namespace channel.channel {
                 coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
                 coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
                 multisigAddr?: string;
+                sequence?: number;
             } = {};
             if (this.creator != null) {
                 data.creator = this.creator;
@@ -979,6 +1017,9 @@ export namespace channel.channel {
             if (this.multisigAddr != null) {
                 data.multisigAddr = this.multisigAddr;
             }
+            if (this.sequence != null) {
+                data.sequence = this.sequence;
+            }
             return data;
         }
         serialize(): Uint8Array;
@@ -997,6 +1038,8 @@ export namespace channel.channel {
                 writer.writeMessage(5, this.coinB, () => this.coinB.serialize(writer));
             if (typeof this.multisigAddr === "string" && this.multisigAddr.length)
                 writer.writeString(6, this.multisigAddr);
+            if (this.sequence !== undefined)
+                writer.writeUint64(7, this.sequence);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1024,6 +1067,9 @@ export namespace channel.channel {
                     case 6:
                         message.multisigAddr = reader.readString();
                         break;
+                    case 7:
+                        message.sequence = reader.readUint64();
+                        break;
                     default: reader.skipField();
                 }
             }
@@ -1038,23 +1084,47 @@ export namespace channel.channel {
     }
     export class MsgOpenChannelResponse extends pb_1.Message {
         #one_of_decls = [];
-        constructor(data?: any[] | {}) {
+        constructor(data?: any[] | {
+            index?: string;
+        }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
-            if (!Array.isArray(data) && typeof data == "object") { }
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("index" in data && data.index != undefined) {
+                    this.index = data.index;
+                }
+            }
         }
-        static fromObject(data: {}) {
+        get index() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set index(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        static fromObject(data: {
+            index?: string;
+        }) {
             const message = new MsgOpenChannelResponse({});
+            if (data.index != null) {
+                message.index = data.index;
+            }
             return message;
         }
         toObject() {
-            const data: {} = {};
+            const data: {
+                index?: string;
+            } = {};
+            if (this.index != null) {
+                data.index = this.index;
+            }
             return data;
         }
         serialize(): Uint8Array;
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.index === "string" && this.index.length)
+                writer.writeString(1, this.index);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1064,6 +1134,9 @@ export namespace channel.channel {
                 if (reader.isEndGroup())
                     break;
                 switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.index = reader.readString();
+                        break;
                     default: reader.skipField();
                 }
             }
@@ -1074,6 +1147,301 @@ export namespace channel.channel {
         }
         static deserializeBinary(bytes: Uint8Array): MsgOpenChannelResponse {
             return MsgOpenChannelResponse.deserialize(bytes);
+        }
+    }
+    export class MsgFund extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            creator?: string;
+            from?: string;
+            channelid?: string;
+            coin?: dependency_1.cosmos.base.v1beta1.Coin;
+            balanceA?: dependency_1.cosmos.base.v1beta1.Coin;
+            balanceB?: dependency_1.cosmos.base.v1beta1.Coin;
+            hashcodeB?: string;
+            multisig?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("creator" in data && data.creator != undefined) {
+                    this.creator = data.creator;
+                }
+                if ("from" in data && data.from != undefined) {
+                    this.from = data.from;
+                }
+                if ("channelid" in data && data.channelid != undefined) {
+                    this.channelid = data.channelid;
+                }
+                if ("coin" in data && data.coin != undefined) {
+                    this.coin = data.coin;
+                }
+                if ("balanceA" in data && data.balanceA != undefined) {
+                    this.balanceA = data.balanceA;
+                }
+                if ("balanceB" in data && data.balanceB != undefined) {
+                    this.balanceB = data.balanceB;
+                }
+                if ("hashcodeB" in data && data.hashcodeB != undefined) {
+                    this.hashcodeB = data.hashcodeB;
+                }
+                if ("multisig" in data && data.multisig != undefined) {
+                    this.multisig = data.multisig;
+                }
+            }
+        }
+        get creator() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set creator(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get from() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set from(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get channelid() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set channelid(value: string) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get coin() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 4) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set coin(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 4, value);
+        }
+        get balanceA() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 5) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set balanceA(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 5, value);
+        }
+        get balanceB() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 6) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set balanceB(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 6, value);
+        }
+        get hashcodeB() {
+            return pb_1.Message.getField(this, 7) as string;
+        }
+        set hashcodeB(value: string) {
+            pb_1.Message.setField(this, 7, value);
+        }
+        get multisig() {
+            return pb_1.Message.getField(this, 8) as string;
+        }
+        set multisig(value: string) {
+            pb_1.Message.setField(this, 8, value);
+        }
+        static fromObject(data: {
+            creator?: string;
+            from?: string;
+            channelid?: string;
+            coin?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            balanceA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            balanceB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            hashcodeB?: string;
+            multisig?: string;
+        }) {
+            const message = new MsgFund({});
+            if (data.creator != null) {
+                message.creator = data.creator;
+            }
+            if (data.from != null) {
+                message.from = data.from;
+            }
+            if (data.channelid != null) {
+                message.channelid = data.channelid;
+            }
+            if (data.coin != null) {
+                message.coin = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coin);
+            }
+            if (data.balanceA != null) {
+                message.balanceA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.balanceA);
+            }
+            if (data.balanceB != null) {
+                message.balanceB = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.balanceB);
+            }
+            if (data.hashcodeB != null) {
+                message.hashcodeB = data.hashcodeB;
+            }
+            if (data.multisig != null) {
+                message.multisig = data.multisig;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                creator?: string;
+                from?: string;
+                channelid?: string;
+                coin?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                balanceA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                balanceB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                hashcodeB?: string;
+                multisig?: string;
+            } = {};
+            if (this.creator != null) {
+                data.creator = this.creator;
+            }
+            if (this.from != null) {
+                data.from = this.from;
+            }
+            if (this.channelid != null) {
+                data.channelid = this.channelid;
+            }
+            if (this.coin != null) {
+                data.coin = this.coin.toObject();
+            }
+            if (this.balanceA != null) {
+                data.balanceA = this.balanceA.toObject();
+            }
+            if (this.balanceB != null) {
+                data.balanceB = this.balanceB.toObject();
+            }
+            if (this.hashcodeB != null) {
+                data.hashcodeB = this.hashcodeB;
+            }
+            if (this.multisig != null) {
+                data.multisig = this.multisig;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.creator === "string" && this.creator.length)
+                writer.writeString(1, this.creator);
+            if (typeof this.from === "string" && this.from.length)
+                writer.writeString(2, this.from);
+            if (typeof this.channelid === "string" && this.channelid.length)
+                writer.writeString(3, this.channelid);
+            if (this.coin !== undefined)
+                writer.writeMessage(4, this.coin, () => this.coin.serialize(writer));
+            if (this.balanceA !== undefined)
+                writer.writeMessage(5, this.balanceA, () => this.balanceA.serialize(writer));
+            if (this.balanceB !== undefined)
+                writer.writeMessage(6, this.balanceB, () => this.balanceB.serialize(writer));
+            if (typeof this.hashcodeB === "string" && this.hashcodeB.length)
+                writer.writeString(7, this.hashcodeB);
+            if (typeof this.multisig === "string" && this.multisig.length)
+                writer.writeString(8, this.multisig);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgFund {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgFund();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.creator = reader.readString();
+                        break;
+                    case 2:
+                        message.from = reader.readString();
+                        break;
+                    case 3:
+                        message.channelid = reader.readString();
+                        break;
+                    case 4:
+                        reader.readMessage(message.coin, () => message.coin = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 5:
+                        reader.readMessage(message.balanceA, () => message.balanceA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 6:
+                        reader.readMessage(message.balanceB, () => message.balanceB = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 7:
+                        message.hashcodeB = reader.readString();
+                        break;
+                    case 8:
+                        message.multisig = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgFund {
+            return MsgFund.deserialize(bytes);
+        }
+    }
+    export class MsgFundResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            index?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("index" in data && data.index != undefined) {
+                    this.index = data.index;
+                }
+            }
+        }
+        get index() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set index(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        static fromObject(data: {
+            index?: string;
+        }) {
+            const message = new MsgFundResponse({});
+            if (data.index != null) {
+                message.index = data.index;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                index?: string;
+            } = {};
+            if (this.index != null) {
+                data.index = this.index;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.index === "string" && this.index.length)
+                writer.writeString(1, this.index);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgFundResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgFundResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.index = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgFundResponse {
+            return MsgFundResponse.deserialize(bytes);
         }
     }
 }

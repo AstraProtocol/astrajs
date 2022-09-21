@@ -4,6 +4,7 @@ import {
   createMsgCommitment as protoCommitment,
   createMsgWithdrawHashlock as protoWithdrawHashlock,
   createMsgWithdrawTimelock as protoWithdrawTimelock,
+  createMsgFund as protoFund,
   createTransaction,
 } from '@astradefi/proto'
 
@@ -17,6 +18,8 @@ import {
   createMsgCommitment,
   createMsgWithdrawHashlock,
   createMsgWithdrawTimelock,
+  createMsgFund,
+  MSG_FUND,
   MSG_CLOSE_CHANNEL,
   MSG_OPEN_CHANNEL,
   MSG_COMMITMENT,
@@ -38,6 +41,7 @@ export interface MessageOpenChannel {
   coinA: Coin
   coinB: Coin
   multisigAddr: string
+  sequence: number
 }
 
 export interface MessageCloseChannel {
@@ -47,6 +51,7 @@ export interface MessageCloseChannel {
   toB: string
   coinA: Coin
   coinB: Coin
+  channelid: string
 }
 
 export interface MessageCommitment {
@@ -71,6 +76,17 @@ export interface MessageWithdrawTimelock {
   creator: string
   to: string
   index: string
+}
+
+export interface MessageFund {
+  creator: string
+  from: string
+  channelid: string
+  coin: Coin
+  balanceA: Coin
+  balanceB: Coin
+  hashcodeB: string
+  multisig: string
 }
 
 export function createMessageOpenChannel(
@@ -114,6 +130,7 @@ export function createMessageOpenChannel(
     params.coinA,
     params.coinB,
     params.multisigAddr,
+    params.sequence,
   )
   const tx = createTransaction(
     msgSend,
@@ -176,6 +193,7 @@ export function createMessageCloseChannel(
     params.coinA,
     params.toB,
     params.coinB,
+    params.channelid,
   )
   const tx = createTransaction(
     msgSend,
@@ -349,6 +367,72 @@ export function createMessageWithdrawTimelock(
 
   // Cosmos
   const msgSend = protoWithdrawTimelock(params.creator, params.to, params.index)
+  const tx = createTransaction(
+    msgSend,
+    memo,
+    fee.amount,
+    fee.denom,
+    parseInt(fee.gas, 10),
+    'ethsecp256',
+    sender.pubkey,
+    sender.sequence,
+    sender.accountNumber,
+    chain.cosmosChainId,
+  )
+
+  return {
+    signDirect: tx.signDirect,
+    legacyAmino: tx.legacyAmino,
+    eipToSign,
+  }
+}
+
+export function createMessageFund(
+  chain: Chain,
+  sender: Sender,
+  fee: Fee,
+  memo: string,
+  params: MessageFund,
+) {
+  // EIP712
+  const feeObject = generateFee(
+    fee.amount,
+    fee.denom,
+    fee.gas,
+    sender.accountAddress,
+  )
+  const types = generateTypes(MSG_FUND)
+  const msg = createMsgFund(
+    params.creator,
+    params.from,
+    params.channelid,
+    params.coin,
+    params.balanceA,
+    params.balanceB,
+    params.hashcodeB,
+    params.multisig,
+  )
+  const messages = generateMessage(
+    sender.accountNumber.toString(),
+    sender.sequence.toString(),
+    chain.cosmosChainId,
+    memo,
+    feeObject,
+    msg,
+  )
+  const eipToSign = createEIP712(types, chain.chainId, messages)
+
+  // Cosmos
+  const msgSend = protoFund(
+    params.creator,
+    params.from,
+    params.channelid,
+    params.coin,
+    params.balanceA,
+    params.balanceB,
+    params.hashcodeB,
+    params.multisig,
+  )
   const tx = createTransaction(
     msgSend,
     memo,
