@@ -6,6 +6,7 @@ export const MSG_OPEN_CHANNEL = {
     { name: 'coinA', type: 'TypeAmount[]' },
     { name: 'coinB', type: 'TypeAmount[]' },
     { name: 'multisigAddr', type: 'string' },
+    { name: 'sequence', type: 'number' },
   ],
   TypeAmount: [
     { name: 'denom', type: 'string' },
@@ -90,6 +91,7 @@ export function createMsgOpenChannel(
   coinA: Coin,
   coinB: Coin,
   multisigAddr: string,
+  sequence: number,
 ) {
   return {
     type: 'astra/MsgOpenChannel',
@@ -110,6 +112,7 @@ export function createMsgOpenChannel(
         },
       ],
       multisigAddr,
+      sequence,
     },
   }
 }

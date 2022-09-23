@@ -111,6 +111,7 @@ export function createMessageOpenChannel(
     params.coinA,
     params.coinB,
     params.multisigAddr,
+    params.sequence,
   )
   const messages = generateMessage(
     sender.accountNumber.toString(),
