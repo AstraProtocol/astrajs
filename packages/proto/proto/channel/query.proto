@@ -1,0 +1,117 @@
+syntax = "proto3";
+package channel.channel;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "channel/params.proto";
+import "channel/commitment.proto";
+import "channel/channel.proto";
+import "channel/fwdcommit.proto";
+// this line is used by starport scaffolding # 1
+
+option go_package = "github.com/AstraProtocol/channel/x/channel/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/channel/channel/params";
+  }
+  // Queries a Commitment by index.
+	rpc Commitment(QueryGetCommitmentRequest) returns (QueryGetCommitmentResponse) {
+		option (google.api.http).get = "/channel/channel/commitment/{index}";
+	}
+
+	// Queries a list of Commitment items.
+	rpc CommitmentAll(QueryAllCommitmentRequest) returns (QueryAllCommitmentResponse) {
+		option (google.api.http).get = "/channel/channel/commitment";
+	}
+
+// Queries a Channel by index.
+	rpc Channel(QueryGetChannelRequest) returns (QueryGetChannelResponse) {
+		option (google.api.http).get = "/channel/channel/channel/{index}";
+	}
+
+	// Queries a list of Channel items.
+	rpc ChannelAll(QueryAllChannelRequest) returns (QueryAllChannelResponse) {
+		option (google.api.http).get = "/channel/channel/channel";
+	}
+
+// Queries a Fwdcommit by index.
+	rpc Fwdcommit(QueryGetFwdcommitRequest) returns (QueryGetFwdcommitResponse) {
+		option (google.api.http).get = "/channel/channel/fwdcommit/{index}";
+	}
+
+	// Queries a list of Fwdcommit items.
+	rpc FwdcommitAll(QueryAllFwdcommitRequest) returns (QueryAllFwdcommitResponse) {
+		option (google.api.http).get = "/channel/channel/fwdcommit";
+	}
+
+// this line is used by starport scaffolding # 2
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetCommitmentRequest {
+	  string index = 1;
+
+}
+
+message QueryGetCommitmentResponse {
+	Commitment commitment = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllCommitmentRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCommitmentResponse {
+	repeated Commitment commitment = 1 [(gogoproto.nullable) = false];
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryGetChannelRequest {
+	  string index = 1;
+
+}
+
+message QueryGetChannelResponse {
+	Channel channel = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllChannelRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllChannelResponse {
+	repeated Channel channel = 1 [(gogoproto.nullable) = false];
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryGetFwdcommitRequest {
+	  string index = 1;
+
+}
+
+message QueryGetFwdcommitResponse {
+	Fwdcommit fwdcommit = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllFwdcommitRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllFwdcommitResponse {
+	repeated Fwdcommit fwdcommit = 1 [(gogoproto.nullable) = false];
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// this line is used by starport scaffolding # 3
