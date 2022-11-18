@@ -22,7 +22,8 @@ rm -rf astra
 
 # Astra Channel
 cd /tmp
-git clone -b dev https://github.com/astraprotocol/channel/
+# git clone -b dev https://github.com/astraprotocol/channel/
+git clone https://github.com/astraprotocol/channel/
 cd channel/
 cp -r ./proto/* $MYFOLDER/proto
 cd /tmp

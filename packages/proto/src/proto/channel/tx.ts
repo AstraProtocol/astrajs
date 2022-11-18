@@ -11,163 +11,181 @@ export namespace channel.channel {
     export class MsgCommitment extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            creator?: string;
-            from?: string;
-            coinA?: dependency_1.cosmos.base.v1beta1.Coin;
-            toATimelock?: string;
-            blockheight?: number;
-            toBHashlock?: string;
-            hashcode?: string;
-            coinlock?: dependency_1.cosmos.base.v1beta1.Coin;
+            Creator?: string;
+            From?: string;
+            CoinToCreator?: dependency_1.cosmos.base.v1beta1.Coin;
+            ToTimelockAddr?: string;
+            Timelock?: number;
+            ToHashlockAddr?: string;
+            Hashcode?: string;
+            CoinToHtlc?: dependency_1.cosmos.base.v1beta1.Coin;
+            ChannelID?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
                 }
-                if ("from" in data && data.from != undefined) {
-                    this.from = data.from;
+                if ("From" in data && data.From != undefined) {
+                    this.From = data.From;
                 }
-                if ("coinA" in data && data.coinA != undefined) {
-                    this.coinA = data.coinA;
+                if ("CoinToCreator" in data && data.CoinToCreator != undefined) {
+                    this.CoinToCreator = data.CoinToCreator;
                 }
-                if ("toATimelock" in data && data.toATimelock != undefined) {
-                    this.toATimelock = data.toATimelock;
+                if ("ToTimelockAddr" in data && data.ToTimelockAddr != undefined) {
+                    this.ToTimelockAddr = data.ToTimelockAddr;
                 }
-                if ("blockheight" in data && data.blockheight != undefined) {
-                    this.blockheight = data.blockheight;
+                if ("Timelock" in data && data.Timelock != undefined) {
+                    this.Timelock = data.Timelock;
                 }
-                if ("toBHashlock" in data && data.toBHashlock != undefined) {
-                    this.toBHashlock = data.toBHashlock;
+                if ("ToHashlockAddr" in data && data.ToHashlockAddr != undefined) {
+                    this.ToHashlockAddr = data.ToHashlockAddr;
                 }
-                if ("hashcode" in data && data.hashcode != undefined) {
-                    this.hashcode = data.hashcode;
+                if ("Hashcode" in data && data.Hashcode != undefined) {
+                    this.Hashcode = data.Hashcode;
                 }
-                if ("coinlock" in data && data.coinlock != undefined) {
-                    this.coinlock = data.coinlock;
+                if ("CoinToHtlc" in data && data.CoinToHtlc != undefined) {
+                    this.CoinToHtlc = data.CoinToHtlc;
+                }
+                if ("ChannelID" in data && data.ChannelID != undefined) {
+                    this.ChannelID = data.ChannelID;
                 }
             }
         }
-        get creator() {
+        get Creator() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set creator(value: string) {
+        set Creator(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get from() {
+        get From() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set from(value: string) {
+        set From(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get coinA() {
+        get CoinToCreator() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 3) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinA(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinToCreator(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 3, value);
         }
-        get toATimelock() {
+        get ToTimelockAddr() {
             return pb_1.Message.getField(this, 4) as string;
         }
-        set toATimelock(value: string) {
+        set ToTimelockAddr(value: string) {
             pb_1.Message.setField(this, 4, value);
         }
-        get blockheight() {
+        get Timelock() {
             return pb_1.Message.getField(this, 5) as number;
         }
-        set blockheight(value: number) {
+        set Timelock(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
-        get toBHashlock() {
+        get ToHashlockAddr() {
             return pb_1.Message.getField(this, 6) as string;
         }
-        set toBHashlock(value: string) {
+        set ToHashlockAddr(value: string) {
             pb_1.Message.setField(this, 6, value);
         }
-        get hashcode() {
+        get Hashcode() {
             return pb_1.Message.getField(this, 7) as string;
         }
-        set hashcode(value: string) {
+        set Hashcode(value: string) {
             pb_1.Message.setField(this, 7, value);
         }
-        get coinlock() {
+        get CoinToHtlc() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 8) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinlock(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinToHtlc(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 8, value);
         }
+        get ChannelID() {
+            return pb_1.Message.getField(this, 9) as string;
+        }
+        set ChannelID(value: string) {
+            pb_1.Message.setField(this, 9, value);
+        }
         static fromObject(data: {
-            creator?: string;
-            from?: string;
-            coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            toATimelock?: string;
-            blockheight?: number;
-            toBHashlock?: string;
-            hashcode?: string;
-            coinlock?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            Creator?: string;
+            From?: string;
+            CoinToCreator?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            ToTimelockAddr?: string;
+            Timelock?: number;
+            ToHashlockAddr?: string;
+            Hashcode?: string;
+            CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            ChannelID?: string;
         }) {
             const message = new MsgCommitment({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
             }
-            if (data.from != null) {
-                message.from = data.from;
+            if (data.From != null) {
+                message.From = data.From;
             }
-            if (data.coinA != null) {
-                message.coinA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinA);
+            if (data.CoinToCreator != null) {
+                message.CoinToCreator = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToCreator);
             }
-            if (data.toATimelock != null) {
-                message.toATimelock = data.toATimelock;
+            if (data.ToTimelockAddr != null) {
+                message.ToTimelockAddr = data.ToTimelockAddr;
             }
-            if (data.blockheight != null) {
-                message.blockheight = data.blockheight;
+            if (data.Timelock != null) {
+                message.Timelock = data.Timelock;
             }
-            if (data.toBHashlock != null) {
-                message.toBHashlock = data.toBHashlock;
+            if (data.ToHashlockAddr != null) {
+                message.ToHashlockAddr = data.ToHashlockAddr;
             }
-            if (data.hashcode != null) {
-                message.hashcode = data.hashcode;
+            if (data.Hashcode != null) {
+                message.Hashcode = data.Hashcode;
             }
-            if (data.coinlock != null) {
-                message.coinlock = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinlock);
+            if (data.CoinToHtlc != null) {
+                message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToHtlc);
+            }
+            if (data.ChannelID != null) {
+                message.ChannelID = data.ChannelID;
             }
             return message;
         }
         toObject() {
             const data: {
-                creator?: string;
-                from?: string;
-                coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                toATimelock?: string;
-                blockheight?: number;
-                toBHashlock?: string;
-                hashcode?: string;
-                coinlock?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                Creator?: string;
+                From?: string;
+                CoinToCreator?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                ToTimelockAddr?: string;
+                Timelock?: number;
+                ToHashlockAddr?: string;
+                Hashcode?: string;
+                CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                ChannelID?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
             }
-            if (this.from != null) {
-                data.from = this.from;
+            if (this.From != null) {
+                data.From = this.From;
             }
-            if (this.coinA != null) {
-                data.coinA = this.coinA.toObject();
+            if (this.CoinToCreator != null) {
+                data.CoinToCreator = this.CoinToCreator.toObject();
             }
-            if (this.toATimelock != null) {
-                data.toATimelock = this.toATimelock;
+            if (this.ToTimelockAddr != null) {
+                data.ToTimelockAddr = this.ToTimelockAddr;
             }
-            if (this.blockheight != null) {
-                data.blockheight = this.blockheight;
+            if (this.Timelock != null) {
+                data.Timelock = this.Timelock;
             }
-            if (this.toBHashlock != null) {
-                data.toBHashlock = this.toBHashlock;
+            if (this.ToHashlockAddr != null) {
+                data.ToHashlockAddr = this.ToHashlockAddr;
             }
-            if (this.hashcode != null) {
-                data.hashcode = this.hashcode;
+            if (this.Hashcode != null) {
+                data.Hashcode = this.Hashcode;
             }
-            if (this.coinlock != null) {
-                data.coinlock = this.coinlock.toObject();
+            if (this.CoinToHtlc != null) {
+                data.CoinToHtlc = this.CoinToHtlc.toObject();
+            }
+            if (this.ChannelID != null) {
+                data.ChannelID = this.ChannelID;
             }
             return data;
         }
@@ -175,22 +193,24 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.creator === "string" && this.creator.length)
-                writer.writeString(1, this.creator);
-            if (typeof this.from === "string" && this.from.length)
-                writer.writeString(2, this.from);
-            if (this.coinA !== undefined)
-                writer.writeMessage(3, this.coinA, () => this.coinA.serialize(writer));
-            if (typeof this.toATimelock === "string" && this.toATimelock.length)
-                writer.writeString(4, this.toATimelock);
-            if (this.blockheight !== undefined)
-                writer.writeUint64(5, this.blockheight);
-            if (typeof this.toBHashlock === "string" && this.toBHashlock.length)
-                writer.writeString(6, this.toBHashlock);
-            if (typeof this.hashcode === "string" && this.hashcode.length)
-                writer.writeString(7, this.hashcode);
-            if (this.coinlock !== undefined)
-                writer.writeMessage(8, this.coinlock, () => this.coinlock.serialize(writer));
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.From === "string" && this.From.length)
+                writer.writeString(2, this.From);
+            if (this.CoinToCreator !== undefined)
+                writer.writeMessage(3, this.CoinToCreator, () => this.CoinToCreator.serialize(writer));
+            if (typeof this.ToTimelockAddr === "string" && this.ToTimelockAddr.length)
+                writer.writeString(4, this.ToTimelockAddr);
+            if (this.Timelock !== undefined)
+                writer.writeUint64(5, this.Timelock);
+            if (typeof this.ToHashlockAddr === "string" && this.ToHashlockAddr.length)
+                writer.writeString(6, this.ToHashlockAddr);
+            if (typeof this.Hashcode === "string" && this.Hashcode.length)
+                writer.writeString(7, this.Hashcode);
+            if (this.CoinToHtlc !== undefined)
+                writer.writeMessage(8, this.CoinToHtlc, () => this.CoinToHtlc.serialize(writer));
+            if (typeof this.ChannelID === "string" && this.ChannelID.length)
+                writer.writeString(9, this.ChannelID);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -201,28 +221,31 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.Creator = reader.readString();
                         break;
                     case 2:
-                        message.from = reader.readString();
+                        message.From = reader.readString();
                         break;
                     case 3:
-                        reader.readMessage(message.coinA, () => message.coinA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinToCreator, () => message.CoinToCreator = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 4:
-                        message.toATimelock = reader.readString();
+                        message.ToTimelockAddr = reader.readString();
                         break;
                     case 5:
-                        message.blockheight = reader.readUint64();
+                        message.Timelock = reader.readUint64();
                         break;
                     case 6:
-                        message.toBHashlock = reader.readString();
+                        message.ToHashlockAddr = reader.readString();
                         break;
                     case 7:
-                        message.hashcode = reader.readString();
+                        message.Hashcode = reader.readString();
                         break;
                     case 8:
-                        reader.readMessage(message.coinlock, () => message.coinlock = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinToHtlc, () => message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 9:
+                        message.ChannelID = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -239,37 +262,37 @@ export namespace channel.channel {
     export class MsgCommitmentResponse extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            index?: string;
+            Index?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("index" in data && data.index != undefined) {
-                    this.index = data.index;
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
                 }
             }
         }
-        get index() {
+        get Index() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set index(value: string) {
+        set Index(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         static fromObject(data: {
-            index?: string;
+            Index?: string;
         }) {
             const message = new MsgCommitmentResponse({});
-            if (data.index != null) {
-                message.index = data.index;
+            if (data.Index != null) {
+                message.Index = data.Index;
             }
             return message;
         }
         toObject() {
             const data: {
-                index?: string;
+                Index?: string;
             } = {};
-            if (this.index != null) {
-                data.index = this.index;
+            if (this.Index != null) {
+                data.Index = this.Index;
             }
             return data;
         }
@@ -277,8 +300,8 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.index === "string" && this.index.length)
-                writer.writeString(1, this.index);
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(1, this.Index);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -289,7 +312,7 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.index = reader.readString();
+                        message.Index = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -306,73 +329,73 @@ export namespace channel.channel {
     export class MsgWithdrawTimelock extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            creator?: string;
-            to?: string;
-            index?: string;
+            Creator?: string;
+            To?: string;
+            Index?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
                 }
-                if ("to" in data && data.to != undefined) {
-                    this.to = data.to;
+                if ("To" in data && data.To != undefined) {
+                    this.To = data.To;
                 }
-                if ("index" in data && data.index != undefined) {
-                    this.index = data.index;
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
                 }
             }
         }
-        get creator() {
+        get Creator() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set creator(value: string) {
+        set Creator(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get to() {
+        get To() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set to(value: string) {
+        set To(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get index() {
+        get Index() {
             return pb_1.Message.getField(this, 3) as string;
         }
-        set index(value: string) {
+        set Index(value: string) {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
-            creator?: string;
-            to?: string;
-            index?: string;
+            Creator?: string;
+            To?: string;
+            Index?: string;
         }) {
             const message = new MsgWithdrawTimelock({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
             }
-            if (data.to != null) {
-                message.to = data.to;
+            if (data.To != null) {
+                message.To = data.To;
             }
-            if (data.index != null) {
-                message.index = data.index;
+            if (data.Index != null) {
+                message.Index = data.Index;
             }
             return message;
         }
         toObject() {
             const data: {
-                creator?: string;
-                to?: string;
-                index?: string;
+                Creator?: string;
+                To?: string;
+                Index?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
             }
-            if (this.to != null) {
-                data.to = this.to;
+            if (this.To != null) {
+                data.To = this.To;
             }
-            if (this.index != null) {
-                data.index = this.index;
+            if (this.Index != null) {
+                data.Index = this.Index;
             }
             return data;
         }
@@ -380,12 +403,12 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.creator === "string" && this.creator.length)
-                writer.writeString(1, this.creator);
-            if (typeof this.to === "string" && this.to.length)
-                writer.writeString(2, this.to);
-            if (typeof this.index === "string" && this.index.length)
-                writer.writeString(3, this.index);
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.To === "string" && this.To.length)
+                writer.writeString(2, this.To);
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(3, this.Index);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -396,13 +419,13 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.Creator = reader.readString();
                         break;
                     case 2:
-                        message.to = reader.readString();
+                        message.To = reader.readString();
                         break;
                     case 3:
-                        message.index = reader.readString();
+                        message.Index = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -459,91 +482,91 @@ export namespace channel.channel {
     export class MsgWithdrawHashlock extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            creator?: string;
-            to?: string;
-            index?: string;
-            secret?: string;
+            Creator?: string;
+            To?: string;
+            Index?: string;
+            Secret?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
                 }
-                if ("to" in data && data.to != undefined) {
-                    this.to = data.to;
+                if ("To" in data && data.To != undefined) {
+                    this.To = data.To;
                 }
-                if ("index" in data && data.index != undefined) {
-                    this.index = data.index;
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
                 }
-                if ("secret" in data && data.secret != undefined) {
-                    this.secret = data.secret;
+                if ("Secret" in data && data.Secret != undefined) {
+                    this.Secret = data.Secret;
                 }
             }
         }
-        get creator() {
+        get Creator() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set creator(value: string) {
+        set Creator(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get to() {
+        get To() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set to(value: string) {
+        set To(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get index() {
+        get Index() {
             return pb_1.Message.getField(this, 3) as string;
         }
-        set index(value: string) {
+        set Index(value: string) {
             pb_1.Message.setField(this, 3, value);
         }
-        get secret() {
+        get Secret() {
             return pb_1.Message.getField(this, 4) as string;
         }
-        set secret(value: string) {
+        set Secret(value: string) {
             pb_1.Message.setField(this, 4, value);
         }
         static fromObject(data: {
-            creator?: string;
-            to?: string;
-            index?: string;
-            secret?: string;
+            Creator?: string;
+            To?: string;
+            Index?: string;
+            Secret?: string;
         }) {
             const message = new MsgWithdrawHashlock({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
             }
-            if (data.to != null) {
-                message.to = data.to;
+            if (data.To != null) {
+                message.To = data.To;
             }
-            if (data.index != null) {
-                message.index = data.index;
+            if (data.Index != null) {
+                message.Index = data.Index;
             }
-            if (data.secret != null) {
-                message.secret = data.secret;
+            if (data.Secret != null) {
+                message.Secret = data.Secret;
             }
             return message;
         }
         toObject() {
             const data: {
-                creator?: string;
-                to?: string;
-                index?: string;
-                secret?: string;
+                Creator?: string;
+                To?: string;
+                Index?: string;
+                Secret?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
             }
-            if (this.to != null) {
-                data.to = this.to;
+            if (this.To != null) {
+                data.To = this.To;
             }
-            if (this.index != null) {
-                data.index = this.index;
+            if (this.Index != null) {
+                data.Index = this.Index;
             }
-            if (this.secret != null) {
-                data.secret = this.secret;
+            if (this.Secret != null) {
+                data.Secret = this.Secret;
             }
             return data;
         }
@@ -551,14 +574,14 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.creator === "string" && this.creator.length)
-                writer.writeString(1, this.creator);
-            if (typeof this.to === "string" && this.to.length)
-                writer.writeString(2, this.to);
-            if (typeof this.index === "string" && this.index.length)
-                writer.writeString(3, this.index);
-            if (typeof this.secret === "string" && this.secret.length)
-                writer.writeString(4, this.secret);
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.To === "string" && this.To.length)
+                writer.writeString(2, this.To);
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(3, this.Index);
+            if (typeof this.Secret === "string" && this.Secret.length)
+                writer.writeString(4, this.Secret);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -569,16 +592,16 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.Creator = reader.readString();
                         break;
                     case 2:
-                        message.to = reader.readString();
+                        message.To = reader.readString();
                         break;
                     case 3:
-                        message.index = reader.readString();
+                        message.Index = reader.readString();
                         break;
                     case 4:
-                        message.secret = reader.readString();
+                        message.Secret = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -635,145 +658,145 @@ export namespace channel.channel {
     export class MsgCloseChannel extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            creator?: string;
-            from?: string;
-            toA?: string;
-            coinA?: dependency_1.cosmos.base.v1beta1.Coin;
-            toB?: string;
-            coinB?: dependency_1.cosmos.base.v1beta1.Coin;
-            channelid?: string;
+            Creator?: string;
+            From?: string;
+            ToA?: string;
+            CoinA?: dependency_1.cosmos.base.v1beta1.Coin;
+            ToB?: string;
+            CoinB?: dependency_1.cosmos.base.v1beta1.Coin;
+            ChannelID?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
                 }
-                if ("from" in data && data.from != undefined) {
-                    this.from = data.from;
+                if ("From" in data && data.From != undefined) {
+                    this.From = data.From;
                 }
-                if ("toA" in data && data.toA != undefined) {
-                    this.toA = data.toA;
+                if ("ToA" in data && data.ToA != undefined) {
+                    this.ToA = data.ToA;
                 }
-                if ("coinA" in data && data.coinA != undefined) {
-                    this.coinA = data.coinA;
+                if ("CoinA" in data && data.CoinA != undefined) {
+                    this.CoinA = data.CoinA;
                 }
-                if ("toB" in data && data.toB != undefined) {
-                    this.toB = data.toB;
+                if ("ToB" in data && data.ToB != undefined) {
+                    this.ToB = data.ToB;
                 }
-                if ("coinB" in data && data.coinB != undefined) {
-                    this.coinB = data.coinB;
+                if ("CoinB" in data && data.CoinB != undefined) {
+                    this.CoinB = data.CoinB;
                 }
-                if ("channelid" in data && data.channelid != undefined) {
-                    this.channelid = data.channelid;
+                if ("ChannelID" in data && data.ChannelID != undefined) {
+                    this.ChannelID = data.ChannelID;
                 }
             }
         }
-        get creator() {
+        get Creator() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set creator(value: string) {
+        set Creator(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get from() {
+        get From() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set from(value: string) {
+        set From(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get toA() {
+        get ToA() {
             return pb_1.Message.getField(this, 3) as string;
         }
-        set toA(value: string) {
+        set ToA(value: string) {
             pb_1.Message.setField(this, 3, value);
         }
-        get coinA() {
+        get CoinA() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 4) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinA(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinA(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 4, value);
         }
-        get toB() {
+        get ToB() {
             return pb_1.Message.getField(this, 5) as string;
         }
-        set toB(value: string) {
+        set ToB(value: string) {
             pb_1.Message.setField(this, 5, value);
         }
-        get coinB() {
+        get CoinB() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 6) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinB(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinB(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 6, value);
         }
-        get channelid() {
+        get ChannelID() {
             return pb_1.Message.getField(this, 7) as string;
         }
-        set channelid(value: string) {
+        set ChannelID(value: string) {
             pb_1.Message.setField(this, 7, value);
         }
         static fromObject(data: {
-            creator?: string;
-            from?: string;
-            toA?: string;
-            coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            toB?: string;
-            coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            channelid?: string;
+            Creator?: string;
+            From?: string;
+            ToA?: string;
+            CoinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            ToB?: string;
+            CoinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            ChannelID?: string;
         }) {
             const message = new MsgCloseChannel({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
             }
-            if (data.from != null) {
-                message.from = data.from;
+            if (data.From != null) {
+                message.From = data.From;
             }
-            if (data.toA != null) {
-                message.toA = data.toA;
+            if (data.ToA != null) {
+                message.ToA = data.ToA;
             }
-            if (data.coinA != null) {
-                message.coinA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinA);
+            if (data.CoinA != null) {
+                message.CoinA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinA);
             }
-            if (data.toB != null) {
-                message.toB = data.toB;
+            if (data.ToB != null) {
+                message.ToB = data.ToB;
             }
-            if (data.coinB != null) {
-                message.coinB = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinB);
+            if (data.CoinB != null) {
+                message.CoinB = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinB);
             }
-            if (data.channelid != null) {
-                message.channelid = data.channelid;
+            if (data.ChannelID != null) {
+                message.ChannelID = data.ChannelID;
             }
             return message;
         }
         toObject() {
             const data: {
-                creator?: string;
-                from?: string;
-                toA?: string;
-                coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                toB?: string;
-                coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                channelid?: string;
+                Creator?: string;
+                From?: string;
+                ToA?: string;
+                CoinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                ToB?: string;
+                CoinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                ChannelID?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
             }
-            if (this.from != null) {
-                data.from = this.from;
+            if (this.From != null) {
+                data.From = this.From;
             }
-            if (this.toA != null) {
-                data.toA = this.toA;
+            if (this.ToA != null) {
+                data.ToA = this.ToA;
             }
-            if (this.coinA != null) {
-                data.coinA = this.coinA.toObject();
+            if (this.CoinA != null) {
+                data.CoinA = this.CoinA.toObject();
             }
-            if (this.toB != null) {
-                data.toB = this.toB;
+            if (this.ToB != null) {
+                data.ToB = this.ToB;
             }
-            if (this.coinB != null) {
-                data.coinB = this.coinB.toObject();
+            if (this.CoinB != null) {
+                data.CoinB = this.CoinB.toObject();
             }
-            if (this.channelid != null) {
-                data.channelid = this.channelid;
+            if (this.ChannelID != null) {
+                data.ChannelID = this.ChannelID;
             }
             return data;
         }
@@ -781,20 +804,20 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.creator === "string" && this.creator.length)
-                writer.writeString(1, this.creator);
-            if (typeof this.from === "string" && this.from.length)
-                writer.writeString(2, this.from);
-            if (typeof this.toA === "string" && this.toA.length)
-                writer.writeString(3, this.toA);
-            if (this.coinA !== undefined)
-                writer.writeMessage(4, this.coinA, () => this.coinA.serialize(writer));
-            if (typeof this.toB === "string" && this.toB.length)
-                writer.writeString(5, this.toB);
-            if (this.coinB !== undefined)
-                writer.writeMessage(6, this.coinB, () => this.coinB.serialize(writer));
-            if (typeof this.channelid === "string" && this.channelid.length)
-                writer.writeString(7, this.channelid);
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.From === "string" && this.From.length)
+                writer.writeString(2, this.From);
+            if (typeof this.ToA === "string" && this.ToA.length)
+                writer.writeString(3, this.ToA);
+            if (this.CoinA !== undefined)
+                writer.writeMessage(4, this.CoinA, () => this.CoinA.serialize(writer));
+            if (typeof this.ToB === "string" && this.ToB.length)
+                writer.writeString(5, this.ToB);
+            if (this.CoinB !== undefined)
+                writer.writeMessage(6, this.CoinB, () => this.CoinB.serialize(writer));
+            if (typeof this.ChannelID === "string" && this.ChannelID.length)
+                writer.writeString(7, this.ChannelID);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -805,25 +828,25 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.Creator = reader.readString();
                         break;
                     case 2:
-                        message.from = reader.readString();
+                        message.From = reader.readString();
                         break;
                     case 3:
-                        message.toA = reader.readString();
+                        message.ToA = reader.readString();
                         break;
                     case 4:
-                        reader.readMessage(message.coinA, () => message.coinA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinA, () => message.CoinA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 5:
-                        message.toB = reader.readString();
+                        message.ToB = reader.readString();
                         break;
                     case 6:
-                        reader.readMessage(message.coinB, () => message.coinB = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinB, () => message.CoinB = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 7:
-                        message.channelid = reader.readString();
+                        message.ChannelID = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -880,145 +903,145 @@ export namespace channel.channel {
     export class MsgOpenChannel extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            creator?: string;
-            partA?: string;
-            partB?: string;
-            coinA?: dependency_1.cosmos.base.v1beta1.Coin;
-            coinB?: dependency_1.cosmos.base.v1beta1.Coin;
-            multisigAddr?: string;
-            sequence?: number;
+            Creator?: string;
+            PartA?: string;
+            PartB?: string;
+            CoinA?: dependency_1.cosmos.base.v1beta1.Coin;
+            CoinB?: dependency_1.cosmos.base.v1beta1.Coin;
+            MultisigAddr?: string;
+            Sequence?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
                 }
-                if ("partA" in data && data.partA != undefined) {
-                    this.partA = data.partA;
+                if ("PartA" in data && data.PartA != undefined) {
+                    this.PartA = data.PartA;
                 }
-                if ("partB" in data && data.partB != undefined) {
-                    this.partB = data.partB;
+                if ("PartB" in data && data.PartB != undefined) {
+                    this.PartB = data.PartB;
                 }
-                if ("coinA" in data && data.coinA != undefined) {
-                    this.coinA = data.coinA;
+                if ("CoinA" in data && data.CoinA != undefined) {
+                    this.CoinA = data.CoinA;
                 }
-                if ("coinB" in data && data.coinB != undefined) {
-                    this.coinB = data.coinB;
+                if ("CoinB" in data && data.CoinB != undefined) {
+                    this.CoinB = data.CoinB;
                 }
-                if ("multisigAddr" in data && data.multisigAddr != undefined) {
-                    this.multisigAddr = data.multisigAddr;
+                if ("MultisigAddr" in data && data.MultisigAddr != undefined) {
+                    this.MultisigAddr = data.MultisigAddr;
                 }
-                if ("sequence" in data && data.sequence != undefined) {
-                    this.sequence = data.sequence;
+                if ("Sequence" in data && data.Sequence != undefined) {
+                    this.Sequence = data.Sequence;
                 }
             }
         }
-        get creator() {
+        get Creator() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set creator(value: string) {
+        set Creator(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get partA() {
+        get PartA() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set partA(value: string) {
+        set PartA(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get partB() {
+        get PartB() {
             return pb_1.Message.getField(this, 3) as string;
         }
-        set partB(value: string) {
+        set PartB(value: string) {
             pb_1.Message.setField(this, 3, value);
         }
-        get coinA() {
+        get CoinA() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 4) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinA(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinA(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 4, value);
         }
-        get coinB() {
+        get CoinB() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 5) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinB(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinB(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 5, value);
         }
-        get multisigAddr() {
+        get MultisigAddr() {
             return pb_1.Message.getField(this, 6) as string;
         }
-        set multisigAddr(value: string) {
+        set MultisigAddr(value: string) {
             pb_1.Message.setField(this, 6, value);
         }
-        get sequence() {
-            return pb_1.Message.getField(this, 7) as number;
+        get Sequence() {
+            return pb_1.Message.getField(this, 7) as string;
         }
-        set sequence(value: number) {
+        set Sequence(value: string) {
             pb_1.Message.setField(this, 7, value);
         }
         static fromObject(data: {
-            creator?: string;
-            partA?: string;
-            partB?: string;
-            coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            multisigAddr?: string;
-            sequence?: number;
+            Creator?: string;
+            PartA?: string;
+            PartB?: string;
+            CoinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            CoinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            MultisigAddr?: string;
+            Sequence?: string;
         }) {
             const message = new MsgOpenChannel({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
             }
-            if (data.partA != null) {
-                message.partA = data.partA;
+            if (data.PartA != null) {
+                message.PartA = data.PartA;
             }
-            if (data.partB != null) {
-                message.partB = data.partB;
+            if (data.PartB != null) {
+                message.PartB = data.PartB;
             }
-            if (data.coinA != null) {
-                message.coinA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinA);
+            if (data.CoinA != null) {
+                message.CoinA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinA);
             }
-            if (data.coinB != null) {
-                message.coinB = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinB);
+            if (data.CoinB != null) {
+                message.CoinB = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinB);
             }
-            if (data.multisigAddr != null) {
-                message.multisigAddr = data.multisigAddr;
+            if (data.MultisigAddr != null) {
+                message.MultisigAddr = data.MultisigAddr;
             }
-            if (data.sequence != null) {
-                message.sequence = data.sequence;
+            if (data.Sequence != null) {
+                message.Sequence = data.Sequence;
             }
             return message;
         }
         toObject() {
             const data: {
-                creator?: string;
-                partA?: string;
-                partB?: string;
-                coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                coinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                multisigAddr?: string;
-                sequence?: number;
+                Creator?: string;
+                PartA?: string;
+                PartB?: string;
+                CoinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                CoinB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                MultisigAddr?: string;
+                Sequence?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
             }
-            if (this.partA != null) {
-                data.partA = this.partA;
+            if (this.PartA != null) {
+                data.PartA = this.PartA;
             }
-            if (this.partB != null) {
-                data.partB = this.partB;
+            if (this.PartB != null) {
+                data.PartB = this.PartB;
             }
-            if (this.coinA != null) {
-                data.coinA = this.coinA.toObject();
+            if (this.CoinA != null) {
+                data.CoinA = this.CoinA.toObject();
             }
-            if (this.coinB != null) {
-                data.coinB = this.coinB.toObject();
+            if (this.CoinB != null) {
+                data.CoinB = this.CoinB.toObject();
             }
-            if (this.multisigAddr != null) {
-                data.multisigAddr = this.multisigAddr;
+            if (this.MultisigAddr != null) {
+                data.MultisigAddr = this.MultisigAddr;
             }
-            if (this.sequence != null) {
-                data.sequence = this.sequence;
+            if (this.Sequence != null) {
+                data.Sequence = this.Sequence;
             }
             return data;
         }
@@ -1026,20 +1049,20 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.creator === "string" && this.creator.length)
-                writer.writeString(1, this.creator);
-            if (typeof this.partA === "string" && this.partA.length)
-                writer.writeString(2, this.partA);
-            if (typeof this.partB === "string" && this.partB.length)
-                writer.writeString(3, this.partB);
-            if (this.coinA !== undefined)
-                writer.writeMessage(4, this.coinA, () => this.coinA.serialize(writer));
-            if (this.coinB !== undefined)
-                writer.writeMessage(5, this.coinB, () => this.coinB.serialize(writer));
-            if (typeof this.multisigAddr === "string" && this.multisigAddr.length)
-                writer.writeString(6, this.multisigAddr);
-            if (this.sequence !== undefined)
-                writer.writeUint64(7, this.sequence);
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.PartA === "string" && this.PartA.length)
+                writer.writeString(2, this.PartA);
+            if (typeof this.PartB === "string" && this.PartB.length)
+                writer.writeString(3, this.PartB);
+            if (this.CoinA !== undefined)
+                writer.writeMessage(4, this.CoinA, () => this.CoinA.serialize(writer));
+            if (this.CoinB !== undefined)
+                writer.writeMessage(5, this.CoinB, () => this.CoinB.serialize(writer));
+            if (typeof this.MultisigAddr === "string" && this.MultisigAddr.length)
+                writer.writeString(6, this.MultisigAddr);
+            if (typeof this.Sequence === "string" && this.Sequence.length)
+                writer.writeString(7, this.Sequence);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1050,25 +1073,25 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.Creator = reader.readString();
                         break;
                     case 2:
-                        message.partA = reader.readString();
+                        message.PartA = reader.readString();
                         break;
                     case 3:
-                        message.partB = reader.readString();
+                        message.PartB = reader.readString();
                         break;
                     case 4:
-                        reader.readMessage(message.coinA, () => message.coinA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinA, () => message.CoinA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 5:
-                        reader.readMessage(message.coinB, () => message.coinB = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinB, () => message.CoinB = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 6:
-                        message.multisigAddr = reader.readString();
+                        message.MultisigAddr = reader.readString();
                         break;
                     case 7:
-                        message.sequence = reader.readUint64();
+                        message.Sequence = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -1085,37 +1108,37 @@ export namespace channel.channel {
     export class MsgOpenChannelResponse extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            index?: string;
+            Index?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("index" in data && data.index != undefined) {
-                    this.index = data.index;
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
                 }
             }
         }
-        get index() {
+        get Index() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set index(value: string) {
+        set Index(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         static fromObject(data: {
-            index?: string;
+            Index?: string;
         }) {
             const message = new MsgOpenChannelResponse({});
-            if (data.index != null) {
-                message.index = data.index;
+            if (data.Index != null) {
+                message.Index = data.Index;
             }
             return message;
         }
         toObject() {
             const data: {
-                index?: string;
+                Index?: string;
             } = {};
-            if (this.index != null) {
-                data.index = this.index;
+            if (this.Index != null) {
+                data.Index = this.Index;
             }
             return data;
         }
@@ -1123,8 +1146,8 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.index === "string" && this.index.length)
-                writer.writeString(1, this.index);
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(1, this.Index);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1135,7 +1158,7 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.index = reader.readString();
+                        message.Index = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -1152,163 +1175,145 @@ export namespace channel.channel {
     export class MsgFund extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            creator?: string;
-            from?: string;
-            channelid?: string;
-            coin?: dependency_1.cosmos.base.v1beta1.Coin;
-            balanceA?: dependency_1.cosmos.base.v1beta1.Coin;
-            balanceB?: dependency_1.cosmos.base.v1beta1.Coin;
-            hashcodeB?: string;
-            multisig?: string;
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToHtlc?: dependency_1.cosmos.base.v1beta1.Coin;
+            Hashcode?: string;
+            Timelock?: string;
+            Multisig?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("creator" in data && data.creator != undefined) {
-                    this.creator = data.creator;
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
                 }
-                if ("from" in data && data.from != undefined) {
-                    this.from = data.from;
+                if ("From" in data && data.From != undefined) {
+                    this.From = data.From;
                 }
-                if ("channelid" in data && data.channelid != undefined) {
-                    this.channelid = data.channelid;
+                if ("ChannelID" in data && data.ChannelID != undefined) {
+                    this.ChannelID = data.ChannelID;
                 }
-                if ("coin" in data && data.coin != undefined) {
-                    this.coin = data.coin;
+                if ("CoinToHtlc" in data && data.CoinToHtlc != undefined) {
+                    this.CoinToHtlc = data.CoinToHtlc;
                 }
-                if ("balanceA" in data && data.balanceA != undefined) {
-                    this.balanceA = data.balanceA;
+                if ("Hashcode" in data && data.Hashcode != undefined) {
+                    this.Hashcode = data.Hashcode;
                 }
-                if ("balanceB" in data && data.balanceB != undefined) {
-                    this.balanceB = data.balanceB;
+                if ("Timelock" in data && data.Timelock != undefined) {
+                    this.Timelock = data.Timelock;
                 }
-                if ("hashcodeB" in data && data.hashcodeB != undefined) {
-                    this.hashcodeB = data.hashcodeB;
-                }
-                if ("multisig" in data && data.multisig != undefined) {
-                    this.multisig = data.multisig;
+                if ("Multisig" in data && data.Multisig != undefined) {
+                    this.Multisig = data.Multisig;
                 }
             }
         }
-        get creator() {
+        get Creator() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set creator(value: string) {
+        set Creator(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get from() {
+        get From() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set from(value: string) {
+        set From(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get channelid() {
+        get ChannelID() {
             return pb_1.Message.getField(this, 3) as string;
         }
-        set channelid(value: string) {
+        set ChannelID(value: string) {
             pb_1.Message.setField(this, 3, value);
         }
-        get coin() {
+        get CoinToHtlc() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 4) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coin(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinToHtlc(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 4, value);
         }
-        get balanceA() {
-            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 5) as dependency_1.cosmos.base.v1beta1.Coin;
+        get Hashcode() {
+            return pb_1.Message.getField(this, 5) as string;
         }
-        set balanceA(value: dependency_1.cosmos.base.v1beta1.Coin) {
-            pb_1.Message.setWrapperField(this, 5, value);
+        set Hashcode(value: string) {
+            pb_1.Message.setField(this, 5, value);
         }
-        get balanceB() {
-            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 6) as dependency_1.cosmos.base.v1beta1.Coin;
+        get Timelock() {
+            return pb_1.Message.getField(this, 6) as string;
         }
-        set balanceB(value: dependency_1.cosmos.base.v1beta1.Coin) {
-            pb_1.Message.setWrapperField(this, 6, value);
+        set Timelock(value: string) {
+            pb_1.Message.setField(this, 6, value);
         }
-        get hashcodeB() {
+        get Multisig() {
             return pb_1.Message.getField(this, 7) as string;
         }
-        set hashcodeB(value: string) {
+        set Multisig(value: string) {
             pb_1.Message.setField(this, 7, value);
         }
-        get multisig() {
-            return pb_1.Message.getField(this, 8) as string;
-        }
-        set multisig(value: string) {
-            pb_1.Message.setField(this, 8, value);
-        }
         static fromObject(data: {
-            creator?: string;
-            from?: string;
-            channelid?: string;
-            coin?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            balanceA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            balanceB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            hashcodeB?: string;
-            multisig?: string;
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            Hashcode?: string;
+            Timelock?: string;
+            Multisig?: string;
         }) {
             const message = new MsgFund({});
-            if (data.creator != null) {
-                message.creator = data.creator;
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
             }
-            if (data.from != null) {
-                message.from = data.from;
+            if (data.From != null) {
+                message.From = data.From;
             }
-            if (data.channelid != null) {
-                message.channelid = data.channelid;
+            if (data.ChannelID != null) {
+                message.ChannelID = data.ChannelID;
             }
-            if (data.coin != null) {
-                message.coin = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coin);
+            if (data.CoinToHtlc != null) {
+                message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToHtlc);
             }
-            if (data.balanceA != null) {
-                message.balanceA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.balanceA);
+            if (data.Hashcode != null) {
+                message.Hashcode = data.Hashcode;
             }
-            if (data.balanceB != null) {
-                message.balanceB = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.balanceB);
+            if (data.Timelock != null) {
+                message.Timelock = data.Timelock;
             }
-            if (data.hashcodeB != null) {
-                message.hashcodeB = data.hashcodeB;
-            }
-            if (data.multisig != null) {
-                message.multisig = data.multisig;
+            if (data.Multisig != null) {
+                message.Multisig = data.Multisig;
             }
             return message;
         }
         toObject() {
             const data: {
-                creator?: string;
-                from?: string;
-                channelid?: string;
-                coin?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                balanceA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                balanceB?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                hashcodeB?: string;
-                multisig?: string;
+                Creator?: string;
+                From?: string;
+                ChannelID?: string;
+                CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                Hashcode?: string;
+                Timelock?: string;
+                Multisig?: string;
             } = {};
-            if (this.creator != null) {
-                data.creator = this.creator;
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
             }
-            if (this.from != null) {
-                data.from = this.from;
+            if (this.From != null) {
+                data.From = this.From;
             }
-            if (this.channelid != null) {
-                data.channelid = this.channelid;
+            if (this.ChannelID != null) {
+                data.ChannelID = this.ChannelID;
             }
-            if (this.coin != null) {
-                data.coin = this.coin.toObject();
+            if (this.CoinToHtlc != null) {
+                data.CoinToHtlc = this.CoinToHtlc.toObject();
             }
-            if (this.balanceA != null) {
-                data.balanceA = this.balanceA.toObject();
+            if (this.Hashcode != null) {
+                data.Hashcode = this.Hashcode;
             }
-            if (this.balanceB != null) {
-                data.balanceB = this.balanceB.toObject();
+            if (this.Timelock != null) {
+                data.Timelock = this.Timelock;
             }
-            if (this.hashcodeB != null) {
-                data.hashcodeB = this.hashcodeB;
-            }
-            if (this.multisig != null) {
-                data.multisig = this.multisig;
+            if (this.Multisig != null) {
+                data.Multisig = this.Multisig;
             }
             return data;
         }
@@ -1316,22 +1321,20 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.creator === "string" && this.creator.length)
-                writer.writeString(1, this.creator);
-            if (typeof this.from === "string" && this.from.length)
-                writer.writeString(2, this.from);
-            if (typeof this.channelid === "string" && this.channelid.length)
-                writer.writeString(3, this.channelid);
-            if (this.coin !== undefined)
-                writer.writeMessage(4, this.coin, () => this.coin.serialize(writer));
-            if (this.balanceA !== undefined)
-                writer.writeMessage(5, this.balanceA, () => this.balanceA.serialize(writer));
-            if (this.balanceB !== undefined)
-                writer.writeMessage(6, this.balanceB, () => this.balanceB.serialize(writer));
-            if (typeof this.hashcodeB === "string" && this.hashcodeB.length)
-                writer.writeString(7, this.hashcodeB);
-            if (typeof this.multisig === "string" && this.multisig.length)
-                writer.writeString(8, this.multisig);
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.From === "string" && this.From.length)
+                writer.writeString(2, this.From);
+            if (typeof this.ChannelID === "string" && this.ChannelID.length)
+                writer.writeString(3, this.ChannelID);
+            if (this.CoinToHtlc !== undefined)
+                writer.writeMessage(4, this.CoinToHtlc, () => this.CoinToHtlc.serialize(writer));
+            if (typeof this.Hashcode === "string" && this.Hashcode.length)
+                writer.writeString(5, this.Hashcode);
+            if (typeof this.Timelock === "string" && this.Timelock.length)
+                writer.writeString(6, this.Timelock);
+            if (typeof this.Multisig === "string" && this.Multisig.length)
+                writer.writeString(7, this.Multisig);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1342,28 +1345,25 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.creator = reader.readString();
+                        message.Creator = reader.readString();
                         break;
                     case 2:
-                        message.from = reader.readString();
+                        message.From = reader.readString();
                         break;
                     case 3:
-                        message.channelid = reader.readString();
+                        message.ChannelID = reader.readString();
                         break;
                     case 4:
-                        reader.readMessage(message.coin, () => message.coin = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinToHtlc, () => message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 5:
-                        reader.readMessage(message.balanceA, () => message.balanceA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        message.Hashcode = reader.readString();
                         break;
                     case 6:
-                        reader.readMessage(message.balanceB, () => message.balanceB = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        message.Timelock = reader.readString();
                         break;
                     case 7:
-                        message.hashcodeB = reader.readString();
-                        break;
-                    case 8:
-                        message.multisig = reader.readString();
+                        message.Multisig = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -1380,37 +1380,37 @@ export namespace channel.channel {
     export class MsgFundResponse extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            index?: string;
+            Index?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("index" in data && data.index != undefined) {
-                    this.index = data.index;
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
                 }
             }
         }
-        get index() {
+        get Index() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set index(value: string) {
+        set Index(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         static fromObject(data: {
-            index?: string;
+            Index?: string;
         }) {
             const message = new MsgFundResponse({});
-            if (data.index != null) {
-                message.index = data.index;
+            if (data.Index != null) {
+                message.Index = data.Index;
             }
             return message;
         }
         toObject() {
             const data: {
-                index?: string;
+                Index?: string;
             } = {};
-            if (this.index != null) {
-                data.index = this.index;
+            if (this.Index != null) {
+                data.Index = this.Index;
             }
             return data;
         }
@@ -1418,8 +1418,8 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.index === "string" && this.index.length)
-                writer.writeString(1, this.index);
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(1, this.Index);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1430,7 +1430,7 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.index = reader.readString();
+                        message.Index = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -1442,6 +1442,1580 @@ export namespace channel.channel {
         }
         static deserializeBinary(bytes: Uint8Array): MsgFundResponse {
             return MsgFundResponse.deserialize(bytes);
+        }
+    }
+    export class MsgAcceptfund extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToAcceptSide?: dependency_1.cosmos.base.v1beta1.Coin;
+            Hashcode?: string;
+            Timelock?: string;
+            Multisig?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
+                }
+                if ("From" in data && data.From != undefined) {
+                    this.From = data.From;
+                }
+                if ("ChannelID" in data && data.ChannelID != undefined) {
+                    this.ChannelID = data.ChannelID;
+                }
+                if ("CoinToAcceptSide" in data && data.CoinToAcceptSide != undefined) {
+                    this.CoinToAcceptSide = data.CoinToAcceptSide;
+                }
+                if ("Hashcode" in data && data.Hashcode != undefined) {
+                    this.Hashcode = data.Hashcode;
+                }
+                if ("Timelock" in data && data.Timelock != undefined) {
+                    this.Timelock = data.Timelock;
+                }
+                if ("Multisig" in data && data.Multisig != undefined) {
+                    this.Multisig = data.Multisig;
+                }
+            }
+        }
+        get Creator() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set Creator(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get From() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set From(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get ChannelID() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set ChannelID(value: string) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get CoinToAcceptSide() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 4) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set CoinToAcceptSide(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 4, value);
+        }
+        get Hashcode() {
+            return pb_1.Message.getField(this, 5) as string;
+        }
+        set Hashcode(value: string) {
+            pb_1.Message.setField(this, 5, value);
+        }
+        get Timelock() {
+            return pb_1.Message.getField(this, 6) as string;
+        }
+        set Timelock(value: string) {
+            pb_1.Message.setField(this, 6, value);
+        }
+        get Multisig() {
+            return pb_1.Message.getField(this, 7) as string;
+        }
+        set Multisig(value: string) {
+            pb_1.Message.setField(this, 7, value);
+        }
+        static fromObject(data: {
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToAcceptSide?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            Hashcode?: string;
+            Timelock?: string;
+            Multisig?: string;
+        }) {
+            const message = new MsgAcceptfund({});
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
+            }
+            if (data.From != null) {
+                message.From = data.From;
+            }
+            if (data.ChannelID != null) {
+                message.ChannelID = data.ChannelID;
+            }
+            if (data.CoinToAcceptSide != null) {
+                message.CoinToAcceptSide = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToAcceptSide);
+            }
+            if (data.Hashcode != null) {
+                message.Hashcode = data.Hashcode;
+            }
+            if (data.Timelock != null) {
+                message.Timelock = data.Timelock;
+            }
+            if (data.Multisig != null) {
+                message.Multisig = data.Multisig;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                Creator?: string;
+                From?: string;
+                ChannelID?: string;
+                CoinToAcceptSide?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                Hashcode?: string;
+                Timelock?: string;
+                Multisig?: string;
+            } = {};
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
+            }
+            if (this.From != null) {
+                data.From = this.From;
+            }
+            if (this.ChannelID != null) {
+                data.ChannelID = this.ChannelID;
+            }
+            if (this.CoinToAcceptSide != null) {
+                data.CoinToAcceptSide = this.CoinToAcceptSide.toObject();
+            }
+            if (this.Hashcode != null) {
+                data.Hashcode = this.Hashcode;
+            }
+            if (this.Timelock != null) {
+                data.Timelock = this.Timelock;
+            }
+            if (this.Multisig != null) {
+                data.Multisig = this.Multisig;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.From === "string" && this.From.length)
+                writer.writeString(2, this.From);
+            if (typeof this.ChannelID === "string" && this.ChannelID.length)
+                writer.writeString(3, this.ChannelID);
+            if (this.CoinToAcceptSide !== undefined)
+                writer.writeMessage(4, this.CoinToAcceptSide, () => this.CoinToAcceptSide.serialize(writer));
+            if (typeof this.Hashcode === "string" && this.Hashcode.length)
+                writer.writeString(5, this.Hashcode);
+            if (typeof this.Timelock === "string" && this.Timelock.length)
+                writer.writeString(6, this.Timelock);
+            if (typeof this.Multisig === "string" && this.Multisig.length)
+                writer.writeString(7, this.Multisig);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgAcceptfund {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgAcceptfund();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.Creator = reader.readString();
+                        break;
+                    case 2:
+                        message.From = reader.readString();
+                        break;
+                    case 3:
+                        message.ChannelID = reader.readString();
+                        break;
+                    case 4:
+                        reader.readMessage(message.CoinToAcceptSide, () => message.CoinToAcceptSide = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 5:
+                        message.Hashcode = reader.readString();
+                        break;
+                    case 6:
+                        message.Timelock = reader.readString();
+                        break;
+                    case 7:
+                        message.Multisig = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgAcceptfund {
+            return MsgAcceptfund.deserialize(bytes);
+        }
+    }
+    export class MsgAcceptfundResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            Index?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
+                }
+            }
+        }
+        get Index() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set Index(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        static fromObject(data: {
+            Index?: string;
+        }) {
+            const message = new MsgAcceptfundResponse({});
+            if (data.Index != null) {
+                message.Index = data.Index;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                Index?: string;
+            } = {};
+            if (this.Index != null) {
+                data.Index = this.Index;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(1, this.Index);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgAcceptfundResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgAcceptfundResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.Index = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgAcceptfundResponse {
+            return MsgAcceptfundResponse.deserialize(bytes);
+        }
+    }
+    export class MsgSendercommit extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToSender?: dependency_1.cosmos.base.v1beta1.Coin;
+            CoinToHtlc?: dependency_1.cosmos.base.v1beta1.Coin;
+            HashcodeHtlc?: string;
+            TimelockHtlc?: string;
+            CoinTransfer?: dependency_1.cosmos.base.v1beta1.Coin;
+            HashcodeDest?: string;
+            TimelockReceiver?: string;
+            TimelockSender?: string;
+            Multisig?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
+                }
+                if ("From" in data && data.From != undefined) {
+                    this.From = data.From;
+                }
+                if ("ChannelID" in data && data.ChannelID != undefined) {
+                    this.ChannelID = data.ChannelID;
+                }
+                if ("CoinToSender" in data && data.CoinToSender != undefined) {
+                    this.CoinToSender = data.CoinToSender;
+                }
+                if ("CoinToHtlc" in data && data.CoinToHtlc != undefined) {
+                    this.CoinToHtlc = data.CoinToHtlc;
+                }
+                if ("HashcodeHtlc" in data && data.HashcodeHtlc != undefined) {
+                    this.HashcodeHtlc = data.HashcodeHtlc;
+                }
+                if ("TimelockHtlc" in data && data.TimelockHtlc != undefined) {
+                    this.TimelockHtlc = data.TimelockHtlc;
+                }
+                if ("CoinTransfer" in data && data.CoinTransfer != undefined) {
+                    this.CoinTransfer = data.CoinTransfer;
+                }
+                if ("HashcodeDest" in data && data.HashcodeDest != undefined) {
+                    this.HashcodeDest = data.HashcodeDest;
+                }
+                if ("TimelockReceiver" in data && data.TimelockReceiver != undefined) {
+                    this.TimelockReceiver = data.TimelockReceiver;
+                }
+                if ("TimelockSender" in data && data.TimelockSender != undefined) {
+                    this.TimelockSender = data.TimelockSender;
+                }
+                if ("Multisig" in data && data.Multisig != undefined) {
+                    this.Multisig = data.Multisig;
+                }
+            }
+        }
+        get Creator() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set Creator(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get From() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set From(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get ChannelID() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set ChannelID(value: string) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get CoinToSender() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 4) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set CoinToSender(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 4, value);
+        }
+        get CoinToHtlc() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 5) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set CoinToHtlc(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 5, value);
+        }
+        get HashcodeHtlc() {
+            return pb_1.Message.getField(this, 6) as string;
+        }
+        set HashcodeHtlc(value: string) {
+            pb_1.Message.setField(this, 6, value);
+        }
+        get TimelockHtlc() {
+            return pb_1.Message.getField(this, 7) as string;
+        }
+        set TimelockHtlc(value: string) {
+            pb_1.Message.setField(this, 7, value);
+        }
+        get CoinTransfer() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 8) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set CoinTransfer(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 8, value);
+        }
+        get HashcodeDest() {
+            return pb_1.Message.getField(this, 9) as string;
+        }
+        set HashcodeDest(value: string) {
+            pb_1.Message.setField(this, 9, value);
+        }
+        get TimelockReceiver() {
+            return pb_1.Message.getField(this, 10) as string;
+        }
+        set TimelockReceiver(value: string) {
+            pb_1.Message.setField(this, 10, value);
+        }
+        get TimelockSender() {
+            return pb_1.Message.getField(this, 11) as string;
+        }
+        set TimelockSender(value: string) {
+            pb_1.Message.setField(this, 11, value);
+        }
+        get Multisig() {
+            return pb_1.Message.getField(this, 12) as string;
+        }
+        set Multisig(value: string) {
+            pb_1.Message.setField(this, 12, value);
+        }
+        static fromObject(data: {
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToSender?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            HashcodeHtlc?: string;
+            TimelockHtlc?: string;
+            CoinTransfer?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            HashcodeDest?: string;
+            TimelockReceiver?: string;
+            TimelockSender?: string;
+            Multisig?: string;
+        }) {
+            const message = new MsgSendercommit({});
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
+            }
+            if (data.From != null) {
+                message.From = data.From;
+            }
+            if (data.ChannelID != null) {
+                message.ChannelID = data.ChannelID;
+            }
+            if (data.CoinToSender != null) {
+                message.CoinToSender = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToSender);
+            }
+            if (data.CoinToHtlc != null) {
+                message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToHtlc);
+            }
+            if (data.HashcodeHtlc != null) {
+                message.HashcodeHtlc = data.HashcodeHtlc;
+            }
+            if (data.TimelockHtlc != null) {
+                message.TimelockHtlc = data.TimelockHtlc;
+            }
+            if (data.CoinTransfer != null) {
+                message.CoinTransfer = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinTransfer);
+            }
+            if (data.HashcodeDest != null) {
+                message.HashcodeDest = data.HashcodeDest;
+            }
+            if (data.TimelockReceiver != null) {
+                message.TimelockReceiver = data.TimelockReceiver;
+            }
+            if (data.TimelockSender != null) {
+                message.TimelockSender = data.TimelockSender;
+            }
+            if (data.Multisig != null) {
+                message.Multisig = data.Multisig;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                Creator?: string;
+                From?: string;
+                ChannelID?: string;
+                CoinToSender?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                HashcodeHtlc?: string;
+                TimelockHtlc?: string;
+                CoinTransfer?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                HashcodeDest?: string;
+                TimelockReceiver?: string;
+                TimelockSender?: string;
+                Multisig?: string;
+            } = {};
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
+            }
+            if (this.From != null) {
+                data.From = this.From;
+            }
+            if (this.ChannelID != null) {
+                data.ChannelID = this.ChannelID;
+            }
+            if (this.CoinToSender != null) {
+                data.CoinToSender = this.CoinToSender.toObject();
+            }
+            if (this.CoinToHtlc != null) {
+                data.CoinToHtlc = this.CoinToHtlc.toObject();
+            }
+            if (this.HashcodeHtlc != null) {
+                data.HashcodeHtlc = this.HashcodeHtlc;
+            }
+            if (this.TimelockHtlc != null) {
+                data.TimelockHtlc = this.TimelockHtlc;
+            }
+            if (this.CoinTransfer != null) {
+                data.CoinTransfer = this.CoinTransfer.toObject();
+            }
+            if (this.HashcodeDest != null) {
+                data.HashcodeDest = this.HashcodeDest;
+            }
+            if (this.TimelockReceiver != null) {
+                data.TimelockReceiver = this.TimelockReceiver;
+            }
+            if (this.TimelockSender != null) {
+                data.TimelockSender = this.TimelockSender;
+            }
+            if (this.Multisig != null) {
+                data.Multisig = this.Multisig;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.From === "string" && this.From.length)
+                writer.writeString(2, this.From);
+            if (typeof this.ChannelID === "string" && this.ChannelID.length)
+                writer.writeString(3, this.ChannelID);
+            if (this.CoinToSender !== undefined)
+                writer.writeMessage(4, this.CoinToSender, () => this.CoinToSender.serialize(writer));
+            if (this.CoinToHtlc !== undefined)
+                writer.writeMessage(5, this.CoinToHtlc, () => this.CoinToHtlc.serialize(writer));
+            if (typeof this.HashcodeHtlc === "string" && this.HashcodeHtlc.length)
+                writer.writeString(6, this.HashcodeHtlc);
+            if (typeof this.TimelockHtlc === "string" && this.TimelockHtlc.length)
+                writer.writeString(7, this.TimelockHtlc);
+            if (this.CoinTransfer !== undefined)
+                writer.writeMessage(8, this.CoinTransfer, () => this.CoinTransfer.serialize(writer));
+            if (typeof this.HashcodeDest === "string" && this.HashcodeDest.length)
+                writer.writeString(9, this.HashcodeDest);
+            if (typeof this.TimelockReceiver === "string" && this.TimelockReceiver.length)
+                writer.writeString(10, this.TimelockReceiver);
+            if (typeof this.TimelockSender === "string" && this.TimelockSender.length)
+                writer.writeString(11, this.TimelockSender);
+            if (typeof this.Multisig === "string" && this.Multisig.length)
+                writer.writeString(12, this.Multisig);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgSendercommit {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgSendercommit();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.Creator = reader.readString();
+                        break;
+                    case 2:
+                        message.From = reader.readString();
+                        break;
+                    case 3:
+                        message.ChannelID = reader.readString();
+                        break;
+                    case 4:
+                        reader.readMessage(message.CoinToSender, () => message.CoinToSender = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 5:
+                        reader.readMessage(message.CoinToHtlc, () => message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 6:
+                        message.HashcodeHtlc = reader.readString();
+                        break;
+                    case 7:
+                        message.TimelockHtlc = reader.readString();
+                        break;
+                    case 8:
+                        reader.readMessage(message.CoinTransfer, () => message.CoinTransfer = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 9:
+                        message.HashcodeDest = reader.readString();
+                        break;
+                    case 10:
+                        message.TimelockReceiver = reader.readString();
+                        break;
+                    case 11:
+                        message.TimelockSender = reader.readString();
+                        break;
+                    case 12:
+                        message.Multisig = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgSendercommit {
+            return MsgSendercommit.deserialize(bytes);
+        }
+    }
+    export class MsgSendercommitResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            IndexHtlc?: string;
+            IndexTransfer?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("IndexHtlc" in data && data.IndexHtlc != undefined) {
+                    this.IndexHtlc = data.IndexHtlc;
+                }
+                if ("IndexTransfer" in data && data.IndexTransfer != undefined) {
+                    this.IndexTransfer = data.IndexTransfer;
+                }
+            }
+        }
+        get IndexHtlc() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set IndexHtlc(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get IndexTransfer() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set IndexTransfer(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        static fromObject(data: {
+            IndexHtlc?: string;
+            IndexTransfer?: string;
+        }) {
+            const message = new MsgSendercommitResponse({});
+            if (data.IndexHtlc != null) {
+                message.IndexHtlc = data.IndexHtlc;
+            }
+            if (data.IndexTransfer != null) {
+                message.IndexTransfer = data.IndexTransfer;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                IndexHtlc?: string;
+                IndexTransfer?: string;
+            } = {};
+            if (this.IndexHtlc != null) {
+                data.IndexHtlc = this.IndexHtlc;
+            }
+            if (this.IndexTransfer != null) {
+                data.IndexTransfer = this.IndexTransfer;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.IndexHtlc === "string" && this.IndexHtlc.length)
+                writer.writeString(1, this.IndexHtlc);
+            if (typeof this.IndexTransfer === "string" && this.IndexTransfer.length)
+                writer.writeString(2, this.IndexTransfer);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgSendercommitResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgSendercommitResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.IndexHtlc = reader.readString();
+                        break;
+                    case 2:
+                        message.IndexTransfer = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgSendercommitResponse {
+            return MsgSendercommitResponse.deserialize(bytes);
+        }
+    }
+    export class MsgSenderwithdrawtimelock extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            Creator?: string;
+            TransferIndex?: string;
+            To?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
+                }
+                if ("TransferIndex" in data && data.TransferIndex != undefined) {
+                    this.TransferIndex = data.TransferIndex;
+                }
+                if ("To" in data && data.To != undefined) {
+                    this.To = data.To;
+                }
+            }
+        }
+        get Creator() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set Creator(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get TransferIndex() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set TransferIndex(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get To() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set To(value: string) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        static fromObject(data: {
+            Creator?: string;
+            TransferIndex?: string;
+            To?: string;
+        }) {
+            const message = new MsgSenderwithdrawtimelock({});
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
+            }
+            if (data.TransferIndex != null) {
+                message.TransferIndex = data.TransferIndex;
+            }
+            if (data.To != null) {
+                message.To = data.To;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                Creator?: string;
+                TransferIndex?: string;
+                To?: string;
+            } = {};
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
+            }
+            if (this.TransferIndex != null) {
+                data.TransferIndex = this.TransferIndex;
+            }
+            if (this.To != null) {
+                data.To = this.To;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.TransferIndex === "string" && this.TransferIndex.length)
+                writer.writeString(2, this.TransferIndex);
+            if (typeof this.To === "string" && this.To.length)
+                writer.writeString(3, this.To);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgSenderwithdrawtimelock {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgSenderwithdrawtimelock();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.Creator = reader.readString();
+                        break;
+                    case 2:
+                        message.TransferIndex = reader.readString();
+                        break;
+                    case 3:
+                        message.To = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgSenderwithdrawtimelock {
+            return MsgSenderwithdrawtimelock.deserialize(bytes);
+        }
+    }
+    export class MsgSenderwithdrawtimelockResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {}) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") { }
+        }
+        static fromObject(data: {}) {
+            const message = new MsgSenderwithdrawtimelockResponse({});
+            return message;
+        }
+        toObject() {
+            const data: {} = {};
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgSenderwithdrawtimelockResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgSenderwithdrawtimelockResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgSenderwithdrawtimelockResponse {
+            return MsgSenderwithdrawtimelockResponse.deserialize(bytes);
+        }
+    }
+    export class MsgSenderwithdrawhashlock extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            Creator?: string;
+            TransferIndex?: string;
+            To?: string;
+            Secret?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
+                }
+                if ("TransferIndex" in data && data.TransferIndex != undefined) {
+                    this.TransferIndex = data.TransferIndex;
+                }
+                if ("To" in data && data.To != undefined) {
+                    this.To = data.To;
+                }
+                if ("Secret" in data && data.Secret != undefined) {
+                    this.Secret = data.Secret;
+                }
+            }
+        }
+        get Creator() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set Creator(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get TransferIndex() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set TransferIndex(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get To() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set To(value: string) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get Secret() {
+            return pb_1.Message.getField(this, 4) as string;
+        }
+        set Secret(value: string) {
+            pb_1.Message.setField(this, 4, value);
+        }
+        static fromObject(data: {
+            Creator?: string;
+            TransferIndex?: string;
+            To?: string;
+            Secret?: string;
+        }) {
+            const message = new MsgSenderwithdrawhashlock({});
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
+            }
+            if (data.TransferIndex != null) {
+                message.TransferIndex = data.TransferIndex;
+            }
+            if (data.To != null) {
+                message.To = data.To;
+            }
+            if (data.Secret != null) {
+                message.Secret = data.Secret;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                Creator?: string;
+                TransferIndex?: string;
+                To?: string;
+                Secret?: string;
+            } = {};
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
+            }
+            if (this.TransferIndex != null) {
+                data.TransferIndex = this.TransferIndex;
+            }
+            if (this.To != null) {
+                data.To = this.To;
+            }
+            if (this.Secret != null) {
+                data.Secret = this.Secret;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.TransferIndex === "string" && this.TransferIndex.length)
+                writer.writeString(2, this.TransferIndex);
+            if (typeof this.To === "string" && this.To.length)
+                writer.writeString(3, this.To);
+            if (typeof this.Secret === "string" && this.Secret.length)
+                writer.writeString(4, this.Secret);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgSenderwithdrawhashlock {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgSenderwithdrawhashlock();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.Creator = reader.readString();
+                        break;
+                    case 2:
+                        message.TransferIndex = reader.readString();
+                        break;
+                    case 3:
+                        message.To = reader.readString();
+                        break;
+                    case 4:
+                        message.Secret = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgSenderwithdrawhashlock {
+            return MsgSenderwithdrawhashlock.deserialize(bytes);
+        }
+    }
+    export class MsgSenderwithdrawhashlockResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {}) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") { }
+        }
+        static fromObject(data: {}) {
+            const message = new MsgSenderwithdrawhashlockResponse({});
+            return message;
+        }
+        toObject() {
+            const data: {} = {};
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgSenderwithdrawhashlockResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgSenderwithdrawhashlockResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgSenderwithdrawhashlockResponse {
+            return MsgSenderwithdrawhashlockResponse.deserialize(bytes);
+        }
+    }
+    export class MsgReceiverwithdraw extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            Creator?: string;
+            TransferIndex?: string;
+            To?: string;
+            Secret?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
+                }
+                if ("TransferIndex" in data && data.TransferIndex != undefined) {
+                    this.TransferIndex = data.TransferIndex;
+                }
+                if ("To" in data && data.To != undefined) {
+                    this.To = data.To;
+                }
+                if ("Secret" in data && data.Secret != undefined) {
+                    this.Secret = data.Secret;
+                }
+            }
+        }
+        get Creator() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set Creator(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get TransferIndex() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set TransferIndex(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get To() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set To(value: string) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get Secret() {
+            return pb_1.Message.getField(this, 4) as string;
+        }
+        set Secret(value: string) {
+            pb_1.Message.setField(this, 4, value);
+        }
+        static fromObject(data: {
+            Creator?: string;
+            TransferIndex?: string;
+            To?: string;
+            Secret?: string;
+        }) {
+            const message = new MsgReceiverwithdraw({});
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
+            }
+            if (data.TransferIndex != null) {
+                message.TransferIndex = data.TransferIndex;
+            }
+            if (data.To != null) {
+                message.To = data.To;
+            }
+            if (data.Secret != null) {
+                message.Secret = data.Secret;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                Creator?: string;
+                TransferIndex?: string;
+                To?: string;
+                Secret?: string;
+            } = {};
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
+            }
+            if (this.TransferIndex != null) {
+                data.TransferIndex = this.TransferIndex;
+            }
+            if (this.To != null) {
+                data.To = this.To;
+            }
+            if (this.Secret != null) {
+                data.Secret = this.Secret;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.TransferIndex === "string" && this.TransferIndex.length)
+                writer.writeString(2, this.TransferIndex);
+            if (typeof this.To === "string" && this.To.length)
+                writer.writeString(3, this.To);
+            if (typeof this.Secret === "string" && this.Secret.length)
+                writer.writeString(4, this.Secret);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgReceiverwithdraw {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgReceiverwithdraw();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.Creator = reader.readString();
+                        break;
+                    case 2:
+                        message.TransferIndex = reader.readString();
+                        break;
+                    case 3:
+                        message.To = reader.readString();
+                        break;
+                    case 4:
+                        message.Secret = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgReceiverwithdraw {
+            return MsgReceiverwithdraw.deserialize(bytes);
+        }
+    }
+    export class MsgReceiverwithdrawResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {}) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") { }
+        }
+        static fromObject(data: {}) {
+            const message = new MsgReceiverwithdrawResponse({});
+            return message;
+        }
+        toObject() {
+            const data: {} = {};
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgReceiverwithdrawResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgReceiverwithdrawResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgReceiverwithdrawResponse {
+            return MsgReceiverwithdrawResponse.deserialize(bytes);
+        }
+    }
+    export class MsgReceivercommit extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToReceiver?: dependency_1.cosmos.base.v1beta1.Coin;
+            CoinToHtlc?: dependency_1.cosmos.base.v1beta1.Coin;
+            HashcodeHtlc?: string;
+            TimelockHtlc?: string;
+            CoinTransfer?: dependency_1.cosmos.base.v1beta1.Coin;
+            HashcodeDest?: string;
+            TimelockSender?: string;
+            Multisig?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("Creator" in data && data.Creator != undefined) {
+                    this.Creator = data.Creator;
+                }
+                if ("From" in data && data.From != undefined) {
+                    this.From = data.From;
+                }
+                if ("ChannelID" in data && data.ChannelID != undefined) {
+                    this.ChannelID = data.ChannelID;
+                }
+                if ("CoinToReceiver" in data && data.CoinToReceiver != undefined) {
+                    this.CoinToReceiver = data.CoinToReceiver;
+                }
+                if ("CoinToHtlc" in data && data.CoinToHtlc != undefined) {
+                    this.CoinToHtlc = data.CoinToHtlc;
+                }
+                if ("HashcodeHtlc" in data && data.HashcodeHtlc != undefined) {
+                    this.HashcodeHtlc = data.HashcodeHtlc;
+                }
+                if ("TimelockHtlc" in data && data.TimelockHtlc != undefined) {
+                    this.TimelockHtlc = data.TimelockHtlc;
+                }
+                if ("CoinTransfer" in data && data.CoinTransfer != undefined) {
+                    this.CoinTransfer = data.CoinTransfer;
+                }
+                if ("HashcodeDest" in data && data.HashcodeDest != undefined) {
+                    this.HashcodeDest = data.HashcodeDest;
+                }
+                if ("TimelockSender" in data && data.TimelockSender != undefined) {
+                    this.TimelockSender = data.TimelockSender;
+                }
+                if ("Multisig" in data && data.Multisig != undefined) {
+                    this.Multisig = data.Multisig;
+                }
+            }
+        }
+        get Creator() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set Creator(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get From() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set From(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get ChannelID() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set ChannelID(value: string) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get CoinToReceiver() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 4) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set CoinToReceiver(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 4, value);
+        }
+        get CoinToHtlc() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 5) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set CoinToHtlc(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 5, value);
+        }
+        get HashcodeHtlc() {
+            return pb_1.Message.getField(this, 6) as string;
+        }
+        set HashcodeHtlc(value: string) {
+            pb_1.Message.setField(this, 6, value);
+        }
+        get TimelockHtlc() {
+            return pb_1.Message.getField(this, 7) as string;
+        }
+        set TimelockHtlc(value: string) {
+            pb_1.Message.setField(this, 7, value);
+        }
+        get CoinTransfer() {
+            return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 8) as dependency_1.cosmos.base.v1beta1.Coin;
+        }
+        set CoinTransfer(value: dependency_1.cosmos.base.v1beta1.Coin) {
+            pb_1.Message.setWrapperField(this, 8, value);
+        }
+        get HashcodeDest() {
+            return pb_1.Message.getField(this, 9) as string;
+        }
+        set HashcodeDest(value: string) {
+            pb_1.Message.setField(this, 9, value);
+        }
+        get TimelockSender() {
+            return pb_1.Message.getField(this, 10) as string;
+        }
+        set TimelockSender(value: string) {
+            pb_1.Message.setField(this, 10, value);
+        }
+        get Multisig() {
+            return pb_1.Message.getField(this, 11) as string;
+        }
+        set Multisig(value: string) {
+            pb_1.Message.setField(this, 11, value);
+        }
+        static fromObject(data: {
+            Creator?: string;
+            From?: string;
+            ChannelID?: string;
+            CoinToReceiver?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            HashcodeHtlc?: string;
+            TimelockHtlc?: string;
+            CoinTransfer?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            HashcodeDest?: string;
+            TimelockSender?: string;
+            Multisig?: string;
+        }) {
+            const message = new MsgReceivercommit({});
+            if (data.Creator != null) {
+                message.Creator = data.Creator;
+            }
+            if (data.From != null) {
+                message.From = data.From;
+            }
+            if (data.ChannelID != null) {
+                message.ChannelID = data.ChannelID;
+            }
+            if (data.CoinToReceiver != null) {
+                message.CoinToReceiver = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToReceiver);
+            }
+            if (data.CoinToHtlc != null) {
+                message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToHtlc);
+            }
+            if (data.HashcodeHtlc != null) {
+                message.HashcodeHtlc = data.HashcodeHtlc;
+            }
+            if (data.TimelockHtlc != null) {
+                message.TimelockHtlc = data.TimelockHtlc;
+            }
+            if (data.CoinTransfer != null) {
+                message.CoinTransfer = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinTransfer);
+            }
+            if (data.HashcodeDest != null) {
+                message.HashcodeDest = data.HashcodeDest;
+            }
+            if (data.TimelockSender != null) {
+                message.TimelockSender = data.TimelockSender;
+            }
+            if (data.Multisig != null) {
+                message.Multisig = data.Multisig;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                Creator?: string;
+                From?: string;
+                ChannelID?: string;
+                CoinToReceiver?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                HashcodeHtlc?: string;
+                TimelockHtlc?: string;
+                CoinTransfer?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                HashcodeDest?: string;
+                TimelockSender?: string;
+                Multisig?: string;
+            } = {};
+            if (this.Creator != null) {
+                data.Creator = this.Creator;
+            }
+            if (this.From != null) {
+                data.From = this.From;
+            }
+            if (this.ChannelID != null) {
+                data.ChannelID = this.ChannelID;
+            }
+            if (this.CoinToReceiver != null) {
+                data.CoinToReceiver = this.CoinToReceiver.toObject();
+            }
+            if (this.CoinToHtlc != null) {
+                data.CoinToHtlc = this.CoinToHtlc.toObject();
+            }
+            if (this.HashcodeHtlc != null) {
+                data.HashcodeHtlc = this.HashcodeHtlc;
+            }
+            if (this.TimelockHtlc != null) {
+                data.TimelockHtlc = this.TimelockHtlc;
+            }
+            if (this.CoinTransfer != null) {
+                data.CoinTransfer = this.CoinTransfer.toObject();
+            }
+            if (this.HashcodeDest != null) {
+                data.HashcodeDest = this.HashcodeDest;
+            }
+            if (this.TimelockSender != null) {
+                data.TimelockSender = this.TimelockSender;
+            }
+            if (this.Multisig != null) {
+                data.Multisig = this.Multisig;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.Creator === "string" && this.Creator.length)
+                writer.writeString(1, this.Creator);
+            if (typeof this.From === "string" && this.From.length)
+                writer.writeString(2, this.From);
+            if (typeof this.ChannelID === "string" && this.ChannelID.length)
+                writer.writeString(3, this.ChannelID);
+            if (this.CoinToReceiver !== undefined)
+                writer.writeMessage(4, this.CoinToReceiver, () => this.CoinToReceiver.serialize(writer));
+            if (this.CoinToHtlc !== undefined)
+                writer.writeMessage(5, this.CoinToHtlc, () => this.CoinToHtlc.serialize(writer));
+            if (typeof this.HashcodeHtlc === "string" && this.HashcodeHtlc.length)
+                writer.writeString(6, this.HashcodeHtlc);
+            if (typeof this.TimelockHtlc === "string" && this.TimelockHtlc.length)
+                writer.writeString(7, this.TimelockHtlc);
+            if (this.CoinTransfer !== undefined)
+                writer.writeMessage(8, this.CoinTransfer, () => this.CoinTransfer.serialize(writer));
+            if (typeof this.HashcodeDest === "string" && this.HashcodeDest.length)
+                writer.writeString(9, this.HashcodeDest);
+            if (typeof this.TimelockSender === "string" && this.TimelockSender.length)
+                writer.writeString(10, this.TimelockSender);
+            if (typeof this.Multisig === "string" && this.Multisig.length)
+                writer.writeString(11, this.Multisig);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgReceivercommit {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgReceivercommit();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.Creator = reader.readString();
+                        break;
+                    case 2:
+                        message.From = reader.readString();
+                        break;
+                    case 3:
+                        message.ChannelID = reader.readString();
+                        break;
+                    case 4:
+                        reader.readMessage(message.CoinToReceiver, () => message.CoinToReceiver = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 5:
+                        reader.readMessage(message.CoinToHtlc, () => message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 6:
+                        message.HashcodeHtlc = reader.readString();
+                        break;
+                    case 7:
+                        message.TimelockHtlc = reader.readString();
+                        break;
+                    case 8:
+                        reader.readMessage(message.CoinTransfer, () => message.CoinTransfer = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        break;
+                    case 9:
+                        message.HashcodeDest = reader.readString();
+                        break;
+                    case 10:
+                        message.TimelockSender = reader.readString();
+                        break;
+                    case 11:
+                        message.Multisig = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgReceivercommit {
+            return MsgReceivercommit.deserialize(bytes);
+        }
+    }
+    export class MsgReceivercommitResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            IndexHtlc?: string;
+            IndexTransfer?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("IndexHtlc" in data && data.IndexHtlc != undefined) {
+                    this.IndexHtlc = data.IndexHtlc;
+                }
+                if ("IndexTransfer" in data && data.IndexTransfer != undefined) {
+                    this.IndexTransfer = data.IndexTransfer;
+                }
+            }
+        }
+        get IndexHtlc() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set IndexHtlc(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get IndexTransfer() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set IndexTransfer(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        static fromObject(data: {
+            IndexHtlc?: string;
+            IndexTransfer?: string;
+        }) {
+            const message = new MsgReceivercommitResponse({});
+            if (data.IndexHtlc != null) {
+                message.IndexHtlc = data.IndexHtlc;
+            }
+            if (data.IndexTransfer != null) {
+                message.IndexTransfer = data.IndexTransfer;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                IndexHtlc?: string;
+                IndexTransfer?: string;
+            } = {};
+            if (this.IndexHtlc != null) {
+                data.IndexHtlc = this.IndexHtlc;
+            }
+            if (this.IndexTransfer != null) {
+                data.IndexTransfer = this.IndexTransfer;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.IndexHtlc === "string" && this.IndexHtlc.length)
+                writer.writeString(1, this.IndexHtlc);
+            if (typeof this.IndexTransfer === "string" && this.IndexTransfer.length)
+                writer.writeString(2, this.IndexTransfer);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MsgReceivercommitResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MsgReceivercommitResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.IndexHtlc = reader.readString();
+                        break;
+                    case 2:
+                        message.IndexTransfer = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MsgReceivercommitResponse {
+            return MsgReceivercommitResponse.deserialize(bytes);
         }
     }
 }

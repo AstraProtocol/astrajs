@@ -7,6 +7,8 @@
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_2 from "./params";
 import * as dependency_3 from "./commitment";
+import * as dependency_4 from "./channel";
+import * as dependency_5 from "./fwdcommit";
 import * as pb_1 from "google-protobuf";
 export namespace channel.channel {
     export class GenesisState extends pb_1.Message {
@@ -14,15 +16,23 @@ export namespace channel.channel {
         constructor(data?: any[] | {
             params?: dependency_2.channel.channel.Params;
             commitmentList?: dependency_3.channel.channel.Commitment[];
+            channelList?: dependency_4.channel.channel.Channel[];
+            fwdcommitList?: dependency_5.channel.channel.Fwdcommit[];
         }) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [2], this.#one_of_decls);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [2, 3, 4], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
                 if ("params" in data && data.params != undefined) {
                     this.params = data.params;
                 }
                 if ("commitmentList" in data && data.commitmentList != undefined) {
                     this.commitmentList = data.commitmentList;
+                }
+                if ("channelList" in data && data.channelList != undefined) {
+                    this.channelList = data.channelList;
+                }
+                if ("fwdcommitList" in data && data.fwdcommitList != undefined) {
+                    this.fwdcommitList = data.fwdcommitList;
                 }
             }
         }
@@ -38,9 +48,23 @@ export namespace channel.channel {
         set commitmentList(value: dependency_3.channel.channel.Commitment[]) {
             pb_1.Message.setRepeatedWrapperField(this, 2, value);
         }
+        get channelList() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_4.channel.channel.Channel, 3) as dependency_4.channel.channel.Channel[];
+        }
+        set channelList(value: dependency_4.channel.channel.Channel[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 3, value);
+        }
+        get fwdcommitList() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_5.channel.channel.Fwdcommit, 4) as dependency_5.channel.channel.Fwdcommit[];
+        }
+        set fwdcommitList(value: dependency_5.channel.channel.Fwdcommit[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 4, value);
+        }
         static fromObject(data: {
             params?: ReturnType<typeof dependency_2.channel.channel.Params.prototype.toObject>;
             commitmentList?: ReturnType<typeof dependency_3.channel.channel.Commitment.prototype.toObject>[];
+            channelList?: ReturnType<typeof dependency_4.channel.channel.Channel.prototype.toObject>[];
+            fwdcommitList?: ReturnType<typeof dependency_5.channel.channel.Fwdcommit.prototype.toObject>[];
         }) {
             const message = new GenesisState({});
             if (data.params != null) {
@@ -49,18 +73,32 @@ export namespace channel.channel {
             if (data.commitmentList != null) {
                 message.commitmentList = data.commitmentList.map(item => dependency_3.channel.channel.Commitment.fromObject(item));
             }
+            if (data.channelList != null) {
+                message.channelList = data.channelList.map(item => dependency_4.channel.channel.Channel.fromObject(item));
+            }
+            if (data.fwdcommitList != null) {
+                message.fwdcommitList = data.fwdcommitList.map(item => dependency_5.channel.channel.Fwdcommit.fromObject(item));
+            }
             return message;
         }
         toObject() {
             const data: {
                 params?: ReturnType<typeof dependency_2.channel.channel.Params.prototype.toObject>;
                 commitmentList?: ReturnType<typeof dependency_3.channel.channel.Commitment.prototype.toObject>[];
+                channelList?: ReturnType<typeof dependency_4.channel.channel.Channel.prototype.toObject>[];
+                fwdcommitList?: ReturnType<typeof dependency_5.channel.channel.Fwdcommit.prototype.toObject>[];
             } = {};
             if (this.params != null) {
                 data.params = this.params.toObject();
             }
             if (this.commitmentList != null) {
                 data.commitmentList = this.commitmentList.map((item: dependency_3.channel.channel.Commitment) => item.toObject());
+            }
+            if (this.channelList != null) {
+                data.channelList = this.channelList.map((item: dependency_4.channel.channel.Channel) => item.toObject());
+            }
+            if (this.fwdcommitList != null) {
+                data.fwdcommitList = this.fwdcommitList.map((item: dependency_5.channel.channel.Fwdcommit) => item.toObject());
             }
             return data;
         }
@@ -72,6 +110,10 @@ export namespace channel.channel {
                 writer.writeMessage(1, this.params, () => this.params.serialize(writer));
             if (this.commitmentList !== undefined)
                 writer.writeRepeatedMessage(2, this.commitmentList, (item: dependency_3.channel.channel.Commitment) => item.serialize(writer));
+            if (this.channelList !== undefined)
+                writer.writeRepeatedMessage(3, this.channelList, (item: dependency_4.channel.channel.Channel) => item.serialize(writer));
+            if (this.fwdcommitList !== undefined)
+                writer.writeRepeatedMessage(4, this.fwdcommitList, (item: dependency_5.channel.channel.Fwdcommit) => item.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -86,6 +128,12 @@ export namespace channel.channel {
                         break;
                     case 2:
                         reader.readMessage(message.commitmentList, () => pb_1.Message.addToRepeatedWrapperField(message, 2, dependency_3.channel.channel.Commitment.deserialize(reader), dependency_3.channel.channel.Commitment));
+                        break;
+                    case 3:
+                        reader.readMessage(message.channelList, () => pb_1.Message.addToRepeatedWrapperField(message, 3, dependency_4.channel.channel.Channel.deserialize(reader), dependency_4.channel.channel.Channel));
+                        break;
+                    case 4:
+                        reader.readMessage(message.fwdcommitList, () => pb_1.Message.addToRepeatedWrapperField(message, 4, dependency_5.channel.channel.Fwdcommit.deserialize(reader), dependency_5.channel.channel.Fwdcommit));
                         break;
                     default: reader.skipField();
                 }

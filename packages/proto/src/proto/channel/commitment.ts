@@ -11,163 +11,181 @@ export namespace channel.channel {
     export class Commitment extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            index?: string;
-            from?: string;
-            coinA?: dependency_1.cosmos.base.v1beta1.Coin;
-            toATimelock?: string;
-            toBHashlock?: string;
-            coinlock?: dependency_1.cosmos.base.v1beta1.Coin;
-            blockheight?: number;
-            hashcode?: string;
+            Index?: string;
+            From?: string;
+            CoinToCreator?: dependency_1.cosmos.base.v1beta1.Coin;
+            ToTimelockAddr?: string;
+            ToHashlockAddr?: string;
+            CoinToHtlc?: dependency_1.cosmos.base.v1beta1.Coin;
+            Timelock?: number;
+            Hashcode?: string;
+            ChannelID?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("index" in data && data.index != undefined) {
-                    this.index = data.index;
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
                 }
-                if ("from" in data && data.from != undefined) {
-                    this.from = data.from;
+                if ("From" in data && data.From != undefined) {
+                    this.From = data.From;
                 }
-                if ("coinA" in data && data.coinA != undefined) {
-                    this.coinA = data.coinA;
+                if ("CoinToCreator" in data && data.CoinToCreator != undefined) {
+                    this.CoinToCreator = data.CoinToCreator;
                 }
-                if ("toATimelock" in data && data.toATimelock != undefined) {
-                    this.toATimelock = data.toATimelock;
+                if ("ToTimelockAddr" in data && data.ToTimelockAddr != undefined) {
+                    this.ToTimelockAddr = data.ToTimelockAddr;
                 }
-                if ("toBHashlock" in data && data.toBHashlock != undefined) {
-                    this.toBHashlock = data.toBHashlock;
+                if ("ToHashlockAddr" in data && data.ToHashlockAddr != undefined) {
+                    this.ToHashlockAddr = data.ToHashlockAddr;
                 }
-                if ("coinlock" in data && data.coinlock != undefined) {
-                    this.coinlock = data.coinlock;
+                if ("CoinToHtlc" in data && data.CoinToHtlc != undefined) {
+                    this.CoinToHtlc = data.CoinToHtlc;
                 }
-                if ("blockheight" in data && data.blockheight != undefined) {
-                    this.blockheight = data.blockheight;
+                if ("Timelock" in data && data.Timelock != undefined) {
+                    this.Timelock = data.Timelock;
                 }
-                if ("hashcode" in data && data.hashcode != undefined) {
-                    this.hashcode = data.hashcode;
+                if ("Hashcode" in data && data.Hashcode != undefined) {
+                    this.Hashcode = data.Hashcode;
+                }
+                if ("ChannelID" in data && data.ChannelID != undefined) {
+                    this.ChannelID = data.ChannelID;
                 }
             }
         }
-        get index() {
+        get Index() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set index(value: string) {
+        set Index(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get from() {
+        get From() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set from(value: string) {
+        set From(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get coinA() {
+        get CoinToCreator() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 3) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinA(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinToCreator(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 3, value);
         }
-        get toATimelock() {
+        get ToTimelockAddr() {
             return pb_1.Message.getField(this, 4) as string;
         }
-        set toATimelock(value: string) {
+        set ToTimelockAddr(value: string) {
             pb_1.Message.setField(this, 4, value);
         }
-        get toBHashlock() {
+        get ToHashlockAddr() {
             return pb_1.Message.getField(this, 5) as string;
         }
-        set toBHashlock(value: string) {
+        set ToHashlockAddr(value: string) {
             pb_1.Message.setField(this, 5, value);
         }
-        get coinlock() {
+        get CoinToHtlc() {
             return pb_1.Message.getWrapperField(this, dependency_1.cosmos.base.v1beta1.Coin, 6) as dependency_1.cosmos.base.v1beta1.Coin;
         }
-        set coinlock(value: dependency_1.cosmos.base.v1beta1.Coin) {
+        set CoinToHtlc(value: dependency_1.cosmos.base.v1beta1.Coin) {
             pb_1.Message.setWrapperField(this, 6, value);
         }
-        get blockheight() {
+        get Timelock() {
             return pb_1.Message.getField(this, 7) as number;
         }
-        set blockheight(value: number) {
+        set Timelock(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
-        get hashcode() {
+        get Hashcode() {
             return pb_1.Message.getField(this, 8) as string;
         }
-        set hashcode(value: string) {
+        set Hashcode(value: string) {
             pb_1.Message.setField(this, 8, value);
         }
+        get ChannelID() {
+            return pb_1.Message.getField(this, 9) as string;
+        }
+        set ChannelID(value: string) {
+            pb_1.Message.setField(this, 9, value);
+        }
         static fromObject(data: {
-            index?: string;
-            from?: string;
-            coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            toATimelock?: string;
-            toBHashlock?: string;
-            coinlock?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-            blockheight?: number;
-            hashcode?: string;
+            Index?: string;
+            From?: string;
+            CoinToCreator?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            ToTimelockAddr?: string;
+            ToHashlockAddr?: string;
+            CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+            Timelock?: number;
+            Hashcode?: string;
+            ChannelID?: string;
         }) {
             const message = new Commitment({});
-            if (data.index != null) {
-                message.index = data.index;
+            if (data.Index != null) {
+                message.Index = data.Index;
             }
-            if (data.from != null) {
-                message.from = data.from;
+            if (data.From != null) {
+                message.From = data.From;
             }
-            if (data.coinA != null) {
-                message.coinA = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinA);
+            if (data.CoinToCreator != null) {
+                message.CoinToCreator = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToCreator);
             }
-            if (data.toATimelock != null) {
-                message.toATimelock = data.toATimelock;
+            if (data.ToTimelockAddr != null) {
+                message.ToTimelockAddr = data.ToTimelockAddr;
             }
-            if (data.toBHashlock != null) {
-                message.toBHashlock = data.toBHashlock;
+            if (data.ToHashlockAddr != null) {
+                message.ToHashlockAddr = data.ToHashlockAddr;
             }
-            if (data.coinlock != null) {
-                message.coinlock = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.coinlock);
+            if (data.CoinToHtlc != null) {
+                message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.fromObject(data.CoinToHtlc);
             }
-            if (data.blockheight != null) {
-                message.blockheight = data.blockheight;
+            if (data.Timelock != null) {
+                message.Timelock = data.Timelock;
             }
-            if (data.hashcode != null) {
-                message.hashcode = data.hashcode;
+            if (data.Hashcode != null) {
+                message.Hashcode = data.Hashcode;
+            }
+            if (data.ChannelID != null) {
+                message.ChannelID = data.ChannelID;
             }
             return message;
         }
         toObject() {
             const data: {
-                index?: string;
-                from?: string;
-                coinA?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                toATimelock?: string;
-                toBHashlock?: string;
-                coinlock?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
-                blockheight?: number;
-                hashcode?: string;
+                Index?: string;
+                From?: string;
+                CoinToCreator?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                ToTimelockAddr?: string;
+                ToHashlockAddr?: string;
+                CoinToHtlc?: ReturnType<typeof dependency_1.cosmos.base.v1beta1.Coin.prototype.toObject>;
+                Timelock?: number;
+                Hashcode?: string;
+                ChannelID?: string;
             } = {};
-            if (this.index != null) {
-                data.index = this.index;
+            if (this.Index != null) {
+                data.Index = this.Index;
             }
-            if (this.from != null) {
-                data.from = this.from;
+            if (this.From != null) {
+                data.From = this.From;
             }
-            if (this.coinA != null) {
-                data.coinA = this.coinA.toObject();
+            if (this.CoinToCreator != null) {
+                data.CoinToCreator = this.CoinToCreator.toObject();
             }
-            if (this.toATimelock != null) {
-                data.toATimelock = this.toATimelock;
+            if (this.ToTimelockAddr != null) {
+                data.ToTimelockAddr = this.ToTimelockAddr;
             }
-            if (this.toBHashlock != null) {
-                data.toBHashlock = this.toBHashlock;
+            if (this.ToHashlockAddr != null) {
+                data.ToHashlockAddr = this.ToHashlockAddr;
             }
-            if (this.coinlock != null) {
-                data.coinlock = this.coinlock.toObject();
+            if (this.CoinToHtlc != null) {
+                data.CoinToHtlc = this.CoinToHtlc.toObject();
             }
-            if (this.blockheight != null) {
-                data.blockheight = this.blockheight;
+            if (this.Timelock != null) {
+                data.Timelock = this.Timelock;
             }
-            if (this.hashcode != null) {
-                data.hashcode = this.hashcode;
+            if (this.Hashcode != null) {
+                data.Hashcode = this.Hashcode;
+            }
+            if (this.ChannelID != null) {
+                data.ChannelID = this.ChannelID;
             }
             return data;
         }
@@ -175,22 +193,24 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.index === "string" && this.index.length)
-                writer.writeString(1, this.index);
-            if (typeof this.from === "string" && this.from.length)
-                writer.writeString(2, this.from);
-            if (this.coinA !== undefined)
-                writer.writeMessage(3, this.coinA, () => this.coinA.serialize(writer));
-            if (typeof this.toATimelock === "string" && this.toATimelock.length)
-                writer.writeString(4, this.toATimelock);
-            if (typeof this.toBHashlock === "string" && this.toBHashlock.length)
-                writer.writeString(5, this.toBHashlock);
-            if (this.coinlock !== undefined)
-                writer.writeMessage(6, this.coinlock, () => this.coinlock.serialize(writer));
-            if (this.blockheight !== undefined)
-                writer.writeUint64(7, this.blockheight);
-            if (typeof this.hashcode === "string" && this.hashcode.length)
-                writer.writeString(8, this.hashcode);
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(1, this.Index);
+            if (typeof this.From === "string" && this.From.length)
+                writer.writeString(2, this.From);
+            if (this.CoinToCreator !== undefined)
+                writer.writeMessage(3, this.CoinToCreator, () => this.CoinToCreator.serialize(writer));
+            if (typeof this.ToTimelockAddr === "string" && this.ToTimelockAddr.length)
+                writer.writeString(4, this.ToTimelockAddr);
+            if (typeof this.ToHashlockAddr === "string" && this.ToHashlockAddr.length)
+                writer.writeString(5, this.ToHashlockAddr);
+            if (this.CoinToHtlc !== undefined)
+                writer.writeMessage(6, this.CoinToHtlc, () => this.CoinToHtlc.serialize(writer));
+            if (this.Timelock !== undefined)
+                writer.writeUint64(7, this.Timelock);
+            if (typeof this.Hashcode === "string" && this.Hashcode.length)
+                writer.writeString(8, this.Hashcode);
+            if (typeof this.ChannelID === "string" && this.ChannelID.length)
+                writer.writeString(9, this.ChannelID);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -201,28 +221,31 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.index = reader.readString();
+                        message.Index = reader.readString();
                         break;
                     case 2:
-                        message.from = reader.readString();
+                        message.From = reader.readString();
                         break;
                     case 3:
-                        reader.readMessage(message.coinA, () => message.coinA = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinToCreator, () => message.CoinToCreator = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 4:
-                        message.toATimelock = reader.readString();
+                        message.ToTimelockAddr = reader.readString();
                         break;
                     case 5:
-                        message.toBHashlock = reader.readString();
+                        message.ToHashlockAddr = reader.readString();
                         break;
                     case 6:
-                        reader.readMessage(message.coinlock, () => message.coinlock = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
+                        reader.readMessage(message.CoinToHtlc, () => message.CoinToHtlc = dependency_1.cosmos.base.v1beta1.Coin.deserialize(reader));
                         break;
                     case 7:
-                        message.blockheight = reader.readUint64();
+                        message.Timelock = reader.readUint64();
                         break;
                     case 8:
-                        message.hashcode = reader.readString();
+                        message.Hashcode = reader.readString();
+                        break;
+                    case 9:
+                        message.ChannelID = reader.readString();
                         break;
                     default: reader.skipField();
                 }

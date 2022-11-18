@@ -10,127 +10,127 @@ export namespace channel.channel {
     export class Channel extends pb_1.Message {
         #one_of_decls = [];
         constructor(data?: any[] | {
-            index?: string;
-            multisigAddr?: string;
-            partA?: string;
-            partB?: string;
-            denom?: string;
-            sequence?: number;
+            Index?: string;
+            MultisigAddr?: string;
+            PartA?: string;
+            PartB?: string;
+            Denom?: string;
+            Sequence?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("index" in data && data.index != undefined) {
-                    this.index = data.index;
+                if ("Index" in data && data.Index != undefined) {
+                    this.Index = data.Index;
                 }
-                if ("multisigAddr" in data && data.multisigAddr != undefined) {
-                    this.multisigAddr = data.multisigAddr;
+                if ("MultisigAddr" in data && data.MultisigAddr != undefined) {
+                    this.MultisigAddr = data.MultisigAddr;
                 }
-                if ("partA" in data && data.partA != undefined) {
-                    this.partA = data.partA;
+                if ("PartA" in data && data.PartA != undefined) {
+                    this.PartA = data.PartA;
                 }
-                if ("partB" in data && data.partB != undefined) {
-                    this.partB = data.partB;
+                if ("PartB" in data && data.PartB != undefined) {
+                    this.PartB = data.PartB;
                 }
-                if ("denom" in data && data.denom != undefined) {
-                    this.denom = data.denom;
+                if ("Denom" in data && data.Denom != undefined) {
+                    this.Denom = data.Denom;
                 }
-                if ("sequence" in data && data.sequence != undefined) {
-                    this.sequence = data.sequence;
+                if ("Sequence" in data && data.Sequence != undefined) {
+                    this.Sequence = data.Sequence;
                 }
             }
         }
-        get index() {
+        get Index() {
             return pb_1.Message.getField(this, 1) as string;
         }
-        set index(value: string) {
+        set Index(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
-        get multisigAddr() {
+        get MultisigAddr() {
             return pb_1.Message.getField(this, 2) as string;
         }
-        set multisigAddr(value: string) {
+        set MultisigAddr(value: string) {
             pb_1.Message.setField(this, 2, value);
         }
-        get partA() {
+        get PartA() {
             return pb_1.Message.getField(this, 3) as string;
         }
-        set partA(value: string) {
+        set PartA(value: string) {
             pb_1.Message.setField(this, 3, value);
         }
-        get partB() {
+        get PartB() {
             return pb_1.Message.getField(this, 4) as string;
         }
-        set partB(value: string) {
+        set PartB(value: string) {
             pb_1.Message.setField(this, 4, value);
         }
-        get denom() {
+        get Denom() {
             return pb_1.Message.getField(this, 5) as string;
         }
-        set denom(value: string) {
+        set Denom(value: string) {
             pb_1.Message.setField(this, 5, value);
         }
-        get sequence() {
-            return pb_1.Message.getField(this, 6) as number;
+        get Sequence() {
+            return pb_1.Message.getField(this, 6) as string;
         }
-        set sequence(value: number) {
+        set Sequence(value: string) {
             pb_1.Message.setField(this, 6, value);
         }
         static fromObject(data: {
-            index?: string;
-            multisigAddr?: string;
-            partA?: string;
-            partB?: string;
-            denom?: string;
-            sequence?: number;
+            Index?: string;
+            MultisigAddr?: string;
+            PartA?: string;
+            PartB?: string;
+            Denom?: string;
+            Sequence?: string;
         }) {
             const message = new Channel({});
-            if (data.index != null) {
-                message.index = data.index;
+            if (data.Index != null) {
+                message.Index = data.Index;
             }
-            if (data.multisigAddr != null) {
-                message.multisigAddr = data.multisigAddr;
+            if (data.MultisigAddr != null) {
+                message.MultisigAddr = data.MultisigAddr;
             }
-            if (data.partA != null) {
-                message.partA = data.partA;
+            if (data.PartA != null) {
+                message.PartA = data.PartA;
             }
-            if (data.partB != null) {
-                message.partB = data.partB;
+            if (data.PartB != null) {
+                message.PartB = data.PartB;
             }
-            if (data.denom != null) {
-                message.denom = data.denom;
+            if (data.Denom != null) {
+                message.Denom = data.Denom;
             }
-            if (data.sequence != null) {
-                message.sequence = data.sequence;
+            if (data.Sequence != null) {
+                message.Sequence = data.Sequence;
             }
             return message;
         }
         toObject() {
             const data: {
-                index?: string;
-                multisigAddr?: string;
-                partA?: string;
-                partB?: string;
-                denom?: string;
-                sequence?: number;
+                Index?: string;
+                MultisigAddr?: string;
+                PartA?: string;
+                PartB?: string;
+                Denom?: string;
+                Sequence?: string;
             } = {};
-            if (this.index != null) {
-                data.index = this.index;
+            if (this.Index != null) {
+                data.Index = this.Index;
             }
-            if (this.multisigAddr != null) {
-                data.multisigAddr = this.multisigAddr;
+            if (this.MultisigAddr != null) {
+                data.MultisigAddr = this.MultisigAddr;
             }
-            if (this.partA != null) {
-                data.partA = this.partA;
+            if (this.PartA != null) {
+                data.PartA = this.PartA;
             }
-            if (this.partB != null) {
-                data.partB = this.partB;
+            if (this.PartB != null) {
+                data.PartB = this.PartB;
             }
-            if (this.denom != null) {
-                data.denom = this.denom;
+            if (this.Denom != null) {
+                data.Denom = this.Denom;
             }
-            if (this.sequence != null) {
-                data.sequence = this.sequence;
+            if (this.Sequence != null) {
+                data.Sequence = this.Sequence;
             }
             return data;
         }
@@ -138,18 +138,18 @@ export namespace channel.channel {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.index === "string" && this.index.length)
-                writer.writeString(1, this.index);
-            if (typeof this.multisigAddr === "string" && this.multisigAddr.length)
-                writer.writeString(2, this.multisigAddr);
-            if (typeof this.partA === "string" && this.partA.length)
-                writer.writeString(3, this.partA);
-            if (typeof this.partB === "string" && this.partB.length)
-                writer.writeString(4, this.partB);
-            if (typeof this.denom === "string" && this.denom.length)
-                writer.writeString(5, this.denom);
-            if (this.sequence !== undefined)
-                writer.writeUint64(6, this.sequence);
+            if (typeof this.Index === "string" && this.Index.length)
+                writer.writeString(1, this.Index);
+            if (typeof this.MultisigAddr === "string" && this.MultisigAddr.length)
+                writer.writeString(2, this.MultisigAddr);
+            if (typeof this.PartA === "string" && this.PartA.length)
+                writer.writeString(3, this.PartA);
+            if (typeof this.PartB === "string" && this.PartB.length)
+                writer.writeString(4, this.PartB);
+            if (typeof this.Denom === "string" && this.Denom.length)
+                writer.writeString(5, this.Denom);
+            if (typeof this.Sequence === "string" && this.Sequence.length)
+                writer.writeString(6, this.Sequence);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -160,22 +160,22 @@ export namespace channel.channel {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.index = reader.readString();
+                        message.Index = reader.readString();
                         break;
                     case 2:
-                        message.multisigAddr = reader.readString();
+                        message.MultisigAddr = reader.readString();
                         break;
                     case 3:
-                        message.partA = reader.readString();
+                        message.PartA = reader.readString();
                         break;
                     case 4:
-                        message.partB = reader.readString();
+                        message.PartB = reader.readString();
                         break;
                     case 5:
-                        message.denom = reader.readString();
+                        message.Denom = reader.readString();
                         break;
                     case 6:
-                        message.sequence = reader.readUint64();
+                        message.Sequence = reader.readString();
                         break;
                     default: reader.skipField();
                 }

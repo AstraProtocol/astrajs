@@ -8,6 +8,8 @@
 import * as dependency_3 from "./../cosmos/base/query/v1beta1/pagination";
 import * as dependency_4 from "./params";
 import * as dependency_5 from "./commitment";
+import * as dependency_6 from "./channel";
+import * as dependency_7 from "./fwdcommit";
 import * as pb_1 from "google-protobuf";
 export namespace channel.channel {
     export class QueryParamsRequest extends pb_1.Message {
@@ -406,6 +408,588 @@ export namespace channel.channel {
         }
         static deserializeBinary(bytes: Uint8Array): QueryAllCommitmentResponse {
             return QueryAllCommitmentResponse.deserialize(bytes);
+        }
+    }
+    export class QueryGetChannelRequest extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            index?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("index" in data && data.index != undefined) {
+                    this.index = data.index;
+                }
+            }
+        }
+        get index() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set index(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        static fromObject(data: {
+            index?: string;
+        }) {
+            const message = new QueryGetChannelRequest({});
+            if (data.index != null) {
+                message.index = data.index;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                index?: string;
+            } = {};
+            if (this.index != null) {
+                data.index = this.index;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.index === "string" && this.index.length)
+                writer.writeString(1, this.index);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryGetChannelRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryGetChannelRequest();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.index = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryGetChannelRequest {
+            return QueryGetChannelRequest.deserialize(bytes);
+        }
+    }
+    export class QueryGetChannelResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            channel?: dependency_6.channel.channel.Channel;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("channel" in data && data.channel != undefined) {
+                    this.channel = data.channel;
+                }
+            }
+        }
+        get channel() {
+            return pb_1.Message.getWrapperField(this, dependency_6.channel.channel.Channel, 1) as dependency_6.channel.channel.Channel;
+        }
+        set channel(value: dependency_6.channel.channel.Channel) {
+            pb_1.Message.setWrapperField(this, 1, value);
+        }
+        static fromObject(data: {
+            channel?: ReturnType<typeof dependency_6.channel.channel.Channel.prototype.toObject>;
+        }) {
+            const message = new QueryGetChannelResponse({});
+            if (data.channel != null) {
+                message.channel = dependency_6.channel.channel.Channel.fromObject(data.channel);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                channel?: ReturnType<typeof dependency_6.channel.channel.Channel.prototype.toObject>;
+            } = {};
+            if (this.channel != null) {
+                data.channel = this.channel.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.channel !== undefined)
+                writer.writeMessage(1, this.channel, () => this.channel.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryGetChannelResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryGetChannelResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.channel, () => message.channel = dependency_6.channel.channel.Channel.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryGetChannelResponse {
+            return QueryGetChannelResponse.deserialize(bytes);
+        }
+    }
+    export class QueryAllChannelRequest extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            pagination?: dependency_3.cosmos.base.query.v1beta1.PageRequest;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("pagination" in data && data.pagination != undefined) {
+                    this.pagination = data.pagination;
+                }
+            }
+        }
+        get pagination() {
+            return pb_1.Message.getWrapperField(this, dependency_3.cosmos.base.query.v1beta1.PageRequest, 1) as dependency_3.cosmos.base.query.v1beta1.PageRequest;
+        }
+        set pagination(value: dependency_3.cosmos.base.query.v1beta1.PageRequest) {
+            pb_1.Message.setWrapperField(this, 1, value);
+        }
+        static fromObject(data: {
+            pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageRequest.prototype.toObject>;
+        }) {
+            const message = new QueryAllChannelRequest({});
+            if (data.pagination != null) {
+                message.pagination = dependency_3.cosmos.base.query.v1beta1.PageRequest.fromObject(data.pagination);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageRequest.prototype.toObject>;
+            } = {};
+            if (this.pagination != null) {
+                data.pagination = this.pagination.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.pagination !== undefined)
+                writer.writeMessage(1, this.pagination, () => this.pagination.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryAllChannelRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryAllChannelRequest();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.pagination, () => message.pagination = dependency_3.cosmos.base.query.v1beta1.PageRequest.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryAllChannelRequest {
+            return QueryAllChannelRequest.deserialize(bytes);
+        }
+    }
+    export class QueryAllChannelResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            channel?: dependency_6.channel.channel.Channel[];
+            pagination?: dependency_3.cosmos.base.query.v1beta1.PageResponse;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("channel" in data && data.channel != undefined) {
+                    this.channel = data.channel;
+                }
+                if ("pagination" in data && data.pagination != undefined) {
+                    this.pagination = data.pagination;
+                }
+            }
+        }
+        get channel() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_6.channel.channel.Channel, 1) as dependency_6.channel.channel.Channel[];
+        }
+        set channel(value: dependency_6.channel.channel.Channel[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
+        }
+        get pagination() {
+            return pb_1.Message.getWrapperField(this, dependency_3.cosmos.base.query.v1beta1.PageResponse, 2) as dependency_3.cosmos.base.query.v1beta1.PageResponse;
+        }
+        set pagination(value: dependency_3.cosmos.base.query.v1beta1.PageResponse) {
+            pb_1.Message.setWrapperField(this, 2, value);
+        }
+        static fromObject(data: {
+            channel?: ReturnType<typeof dependency_6.channel.channel.Channel.prototype.toObject>[];
+            pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageResponse.prototype.toObject>;
+        }) {
+            const message = new QueryAllChannelResponse({});
+            if (data.channel != null) {
+                message.channel = data.channel.map(item => dependency_6.channel.channel.Channel.fromObject(item));
+            }
+            if (data.pagination != null) {
+                message.pagination = dependency_3.cosmos.base.query.v1beta1.PageResponse.fromObject(data.pagination);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                channel?: ReturnType<typeof dependency_6.channel.channel.Channel.prototype.toObject>[];
+                pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageResponse.prototype.toObject>;
+            } = {};
+            if (this.channel != null) {
+                data.channel = this.channel.map((item: dependency_6.channel.channel.Channel) => item.toObject());
+            }
+            if (this.pagination != null) {
+                data.pagination = this.pagination.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.channel !== undefined)
+                writer.writeRepeatedMessage(1, this.channel, (item: dependency_6.channel.channel.Channel) => item.serialize(writer));
+            if (this.pagination !== undefined)
+                writer.writeMessage(2, this.pagination, () => this.pagination.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryAllChannelResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryAllChannelResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.channel, () => pb_1.Message.addToRepeatedWrapperField(message, 1, dependency_6.channel.channel.Channel.deserialize(reader), dependency_6.channel.channel.Channel));
+                        break;
+                    case 2:
+                        reader.readMessage(message.pagination, () => message.pagination = dependency_3.cosmos.base.query.v1beta1.PageResponse.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryAllChannelResponse {
+            return QueryAllChannelResponse.deserialize(bytes);
+        }
+    }
+    export class QueryGetFwdcommitRequest extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            index?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("index" in data && data.index != undefined) {
+                    this.index = data.index;
+                }
+            }
+        }
+        get index() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set index(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        static fromObject(data: {
+            index?: string;
+        }) {
+            const message = new QueryGetFwdcommitRequest({});
+            if (data.index != null) {
+                message.index = data.index;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                index?: string;
+            } = {};
+            if (this.index != null) {
+                data.index = this.index;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.index === "string" && this.index.length)
+                writer.writeString(1, this.index);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryGetFwdcommitRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryGetFwdcommitRequest();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.index = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryGetFwdcommitRequest {
+            return QueryGetFwdcommitRequest.deserialize(bytes);
+        }
+    }
+    export class QueryGetFwdcommitResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            fwdcommit?: dependency_7.channel.channel.Fwdcommit;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("fwdcommit" in data && data.fwdcommit != undefined) {
+                    this.fwdcommit = data.fwdcommit;
+                }
+            }
+        }
+        get fwdcommit() {
+            return pb_1.Message.getWrapperField(this, dependency_7.channel.channel.Fwdcommit, 1) as dependency_7.channel.channel.Fwdcommit;
+        }
+        set fwdcommit(value: dependency_7.channel.channel.Fwdcommit) {
+            pb_1.Message.setWrapperField(this, 1, value);
+        }
+        static fromObject(data: {
+            fwdcommit?: ReturnType<typeof dependency_7.channel.channel.Fwdcommit.prototype.toObject>;
+        }) {
+            const message = new QueryGetFwdcommitResponse({});
+            if (data.fwdcommit != null) {
+                message.fwdcommit = dependency_7.channel.channel.Fwdcommit.fromObject(data.fwdcommit);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                fwdcommit?: ReturnType<typeof dependency_7.channel.channel.Fwdcommit.prototype.toObject>;
+            } = {};
+            if (this.fwdcommit != null) {
+                data.fwdcommit = this.fwdcommit.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.fwdcommit !== undefined)
+                writer.writeMessage(1, this.fwdcommit, () => this.fwdcommit.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryGetFwdcommitResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryGetFwdcommitResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.fwdcommit, () => message.fwdcommit = dependency_7.channel.channel.Fwdcommit.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryGetFwdcommitResponse {
+            return QueryGetFwdcommitResponse.deserialize(bytes);
+        }
+    }
+    export class QueryAllFwdcommitRequest extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            pagination?: dependency_3.cosmos.base.query.v1beta1.PageRequest;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("pagination" in data && data.pagination != undefined) {
+                    this.pagination = data.pagination;
+                }
+            }
+        }
+        get pagination() {
+            return pb_1.Message.getWrapperField(this, dependency_3.cosmos.base.query.v1beta1.PageRequest, 1) as dependency_3.cosmos.base.query.v1beta1.PageRequest;
+        }
+        set pagination(value: dependency_3.cosmos.base.query.v1beta1.PageRequest) {
+            pb_1.Message.setWrapperField(this, 1, value);
+        }
+        static fromObject(data: {
+            pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageRequest.prototype.toObject>;
+        }) {
+            const message = new QueryAllFwdcommitRequest({});
+            if (data.pagination != null) {
+                message.pagination = dependency_3.cosmos.base.query.v1beta1.PageRequest.fromObject(data.pagination);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageRequest.prototype.toObject>;
+            } = {};
+            if (this.pagination != null) {
+                data.pagination = this.pagination.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.pagination !== undefined)
+                writer.writeMessage(1, this.pagination, () => this.pagination.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryAllFwdcommitRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryAllFwdcommitRequest();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.pagination, () => message.pagination = dependency_3.cosmos.base.query.v1beta1.PageRequest.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryAllFwdcommitRequest {
+            return QueryAllFwdcommitRequest.deserialize(bytes);
+        }
+    }
+    export class QueryAllFwdcommitResponse extends pb_1.Message {
+        #one_of_decls = [];
+        constructor(data?: any[] | {
+            fwdcommit?: dependency_7.channel.channel.Fwdcommit[];
+            pagination?: dependency_3.cosmos.base.query.v1beta1.PageResponse;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("fwdcommit" in data && data.fwdcommit != undefined) {
+                    this.fwdcommit = data.fwdcommit;
+                }
+                if ("pagination" in data && data.pagination != undefined) {
+                    this.pagination = data.pagination;
+                }
+            }
+        }
+        get fwdcommit() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_7.channel.channel.Fwdcommit, 1) as dependency_7.channel.channel.Fwdcommit[];
+        }
+        set fwdcommit(value: dependency_7.channel.channel.Fwdcommit[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
+        }
+        get pagination() {
+            return pb_1.Message.getWrapperField(this, dependency_3.cosmos.base.query.v1beta1.PageResponse, 2) as dependency_3.cosmos.base.query.v1beta1.PageResponse;
+        }
+        set pagination(value: dependency_3.cosmos.base.query.v1beta1.PageResponse) {
+            pb_1.Message.setWrapperField(this, 2, value);
+        }
+        static fromObject(data: {
+            fwdcommit?: ReturnType<typeof dependency_7.channel.channel.Fwdcommit.prototype.toObject>[];
+            pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageResponse.prototype.toObject>;
+        }) {
+            const message = new QueryAllFwdcommitResponse({});
+            if (data.fwdcommit != null) {
+                message.fwdcommit = data.fwdcommit.map(item => dependency_7.channel.channel.Fwdcommit.fromObject(item));
+            }
+            if (data.pagination != null) {
+                message.pagination = dependency_3.cosmos.base.query.v1beta1.PageResponse.fromObject(data.pagination);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                fwdcommit?: ReturnType<typeof dependency_7.channel.channel.Fwdcommit.prototype.toObject>[];
+                pagination?: ReturnType<typeof dependency_3.cosmos.base.query.v1beta1.PageResponse.prototype.toObject>;
+            } = {};
+            if (this.fwdcommit != null) {
+                data.fwdcommit = this.fwdcommit.map((item: dependency_7.channel.channel.Fwdcommit) => item.toObject());
+            }
+            if (this.pagination != null) {
+                data.pagination = this.pagination.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.fwdcommit !== undefined)
+                writer.writeRepeatedMessage(1, this.fwdcommit, (item: dependency_7.channel.channel.Fwdcommit) => item.serialize(writer));
+            if (this.pagination !== undefined)
+                writer.writeMessage(2, this.pagination, () => this.pagination.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): QueryAllFwdcommitResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new QueryAllFwdcommitResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.fwdcommit, () => pb_1.Message.addToRepeatedWrapperField(message, 1, dependency_7.channel.channel.Fwdcommit.deserialize(reader), dependency_7.channel.channel.Fwdcommit));
+                        break;
+                    case 2:
+                        reader.readMessage(message.pagination, () => message.pagination = dependency_3.cosmos.base.query.v1beta1.PageResponse.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): QueryAllFwdcommitResponse {
+            return QueryAllFwdcommitResponse.deserialize(bytes);
         }
     }
 }

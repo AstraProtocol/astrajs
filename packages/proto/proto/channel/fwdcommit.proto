@@ -1,0 +1,20 @@
+syntax = "proto3";
+package channel.channel;
+
+import "cosmos/base/v1beta1/coin.proto";
+
+option go_package = "github.com/AstraProtocol/channel/x/channel/types";
+
+message Fwdcommit {
+  string Index = 1;
+  string ChannelID = 2;
+  string Sender = 3;
+  string Receiver = 4;
+  string HashcodeDest = 5;
+  string TimelockReceiver = 6;
+  string TimelockSender = 7;
+  string HashcodeHtlc = 8;
+  cosmos.base.v1beta1.Coin CoinTransfer = 9;
+  string Creator = 10;
+}
+
