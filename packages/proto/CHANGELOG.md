@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/astraprotocol/astrajs/compare/@astradefi/proto@0.9.0...@astradefi/proto@0.9.1) (2023-02-10)
+
+**Note:** Version bump only for package @astradefi/proto
+
 # [0.9.0](https://github.com/astraprotocol/astrajs/compare/@astradefi/proto@0.8.0...@astradefi/proto@0.9.0) (2022-11-17)
 
 ### Bug Fixes
