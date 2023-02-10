@@ -1,7 +1,7 @@
 {
   "name": "@astradefi/transactions",
   "description": "Transactions generator for Astra",
-  "version": "0.11.3",
+  "version": "0.11.4",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,8 +30,8 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@astradefi/eip712": "^0.9.3",
-    "@astradefi/proto": "^0.9.3",
+    "@astradefi/eip712": "^0.9.4",
+    "@astradefi/proto": "^0.9.4",
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
   },

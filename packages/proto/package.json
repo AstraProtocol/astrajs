@@ -1,7 +1,7 @@
 {
   "name": "@astradefi/proto",
   "description": "Protobuf files for Astra.",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "license": "MIT",
   "eslintIgnore": [
     "src/proto/**/*.ts"
