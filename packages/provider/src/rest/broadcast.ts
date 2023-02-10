@@ -3,7 +3,7 @@ export function generateEndpointBroadcast() {
 }
 
 export function generateEndpointSimulateGas() {
-  return `cosmos/tx/v1beta1/simulate`
+  return `/cosmos/tx/v1beta1/simulate`
 }
 
 // TODO: make a @astraprotocol/types package and move all the interfaces there
