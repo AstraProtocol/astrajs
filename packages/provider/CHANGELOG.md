@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/astraprotocol/astrajs/compare/@astradefi/provider@0.8.0...@astradefi/provider@0.9.0) (2023-02-10)
+
+### Features
+
+- add simulateGas endpoint ([02d02b9](https://github.com/astraprotocol/astrajs/commit/02d02b9b0a230af65de5ba186425cb0a3d317365))
+
 # [0.8.0](https://github.com/astraprotocol/astrajs/compare/@astradefi/provider@0.7.1...@astradefi/provider@0.8.0) (2022-11-17)
 
 ### Bug Fixes
