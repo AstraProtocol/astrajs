@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/astraprotocol/astrajs/compare/@astradefi/provider@0.11.0...@astradefi/provider@0.11.1) (2023-02-10)
+
+**Note:** Version bump only for package @astradefi/provider
+
 # [0.11.0](https://github.com/astraprotocol/astrajs/compare/@astradefi/provider@0.8.0...@astradefi/provider@0.11.0) (2023-02-10)
 
 ### Bug Fixes

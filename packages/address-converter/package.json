@@ -1,7 +1,7 @@
 {
   "name": "@astradefi/address-converter",
   "description": "Address converter, convert ETH address to Ethermint/astra address.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -40,5 +40,5 @@
     "link-module-alias": "^1.2.0",
     "shx": "^0.3.4"
   },
-  "gitHead": "3d1dedb2206e8b606ac0e450ec35f23b4067d236"
+  "gitHead": "0539f0539139f729076c8cfcdac27f545adcb2b4"
 }
