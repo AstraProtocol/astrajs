@@ -1,7 +1,7 @@
 {
   "name": "@astradefi/provider",
   "description": "Simple provider to query the Astra rest api.",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,5 +36,5 @@
   "devDependencies": {
     "@types/node": "^17.0.21"
   },
-  "gitHead": "0539f0539139f729076c8cfcdac27f545adcb2b4"
+  "gitHead": "ae66a9c03829dbfdf319bd03b801faa2892315f6"
 }

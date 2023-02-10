@@ -1,7 +1,7 @@
 {
   "name": "@astradefi/proto",
   "description": "Protobuf files for Astra.",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "license": "MIT",
   "eslintIgnore": [
     "src/proto/**/*.ts"
@@ -43,5 +43,5 @@
     "@types/node": "^17.0.21",
     "protoc-gen-ts": "^0.8.2"
   },
-  "gitHead": "0539f0539139f729076c8cfcdac27f545adcb2b4"
+  "gitHead": "ae66a9c03829dbfdf319bd03b801faa2892315f6"
 }
