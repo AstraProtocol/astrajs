@@ -44,16 +44,16 @@ address = ETHERMINT.encoder(Buffer.from("e2d61e49ff8a9d724cc54d338d8076f878ac6b7
 // address === "ethm1uttpuj0l32whynx9f5ecmqrklpu2c6m3973048"
 ```
 
-### EVMOS support
+### Astra support
 
 ```ts
-import {ethToEvmos, evmosToEth} from '@astradefi/address-converter"
+import {ethToAstra, astraToEth} from '@astradefi/address-converter"
 
-let address = ethToEvmos("0x14574a6DFF2Ddf9e07828b4345d3040919AF5652")
-// "evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw"
+let address = ethToAstra("0x4913aed746b876e5A6A20014D1186FbFA1F40E86")
+// "astra1fyf6a46xhpmwtf4zqq2dzxr0h7slgr5xv5qve9"
 
-let address = evmosToEth("evmos1z3t55m0l9h0eupuz3dp5t5cypyv674jj7mz2jw")
-// "0x14574a6DFF2Ddf9e07828b4345d3040919AF5652"
+let address = astraToEth("astra1fyf6a46xhpmwtf4zqq2dzxr0h7slgr5xv5qve9")
+// "0x4913aed746b876e5A6A20014D1186FbFA1F40E86"
 ```
 
 ## Reference

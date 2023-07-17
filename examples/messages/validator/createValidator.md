@@ -4,13 +4,13 @@ This is an example of how to use the current implementation of createValidator.
 This will be included in a function named `createMsgCreateValidator` as soon as Evmos supports EIP712 encoding for this message.
 
 ```ty
-import { ethToEvmos, evmosToEth } from "@tharsis/address-converter";
+import { ethToAstra, astraToEth } from "@astradefi/address-converter";
 import {
   createTransactionWithMultipleMessages,
   createMsgSend as protoMsgSend,
   createMsgDelegate as protoMsgDelegate,
   createMsgCreateValidator as protoMsgCreateValidator,
-} from "@evmos/proto";
+} from "@astradefi/proto";
 import { Wallet } from "@ethersproject/wallet";
 import {
   broadcast,
@@ -67,9 +67,9 @@ async function prepareTx(wallet: Wallet) {
       },
       "100000000000000000",
       sender.accountAddress,
-      "evmosvaloper14rajuselkxsvqtqv20lamd08t8zxg8qdw3r3xm",
+      "astravaloper1wey5kg6w2sawn35uy86qlfdwzswrcs0jrz88tf",
       "100000000000000000",
-      "aevmos",
+      "aastra",
       valPubkey
     )
   );
@@ -99,9 +99,9 @@ async function prepareTx(wallet: Wallet) {
       },
       "100000000000000000",
       sender.accountAddress,
-      "evmosvaloper14rajuselkxsvqtqv20lamd08t8zxg8qdw3r3xm",
+      "astravaloper1wey5kg6w2sawn35uy86qlfdwzswrcs0jrz88tf",
       "100000000000000000",
-      "aevmos",
+      "aastra",
       valPubkey
     )
   );
