@@ -31,16 +31,17 @@
   },
   "dependencies": {
     "@cosmjs/proto-signing": "^0.28.13",
-    "@evmos/proto": "^0.1.21",
+    "@astradefi/proto": "^0.9.4",
     "@metamask/eth-sig-util": "^4.0.1",
     "cosmjs-types": "^0.5.1",
     "link-module-alias": "^1.2.0",
     "long": "^5.2.0",
     "shx": "^0.3.4"
   },
-  "gitHead": "ae66a9c03829dbfdf319bd03b801faa2892315f6",
   "devDependencies": {
-    "@types/jest": "^29.2.3",
-    "@types/mocha": "^10.0.0"
-  }
+    "@types/jest": "^29.4.0",
+    "jest": "^29.4.1",
+    "ts-jest": "^29.0.5"
+  },
+  "gitHead": "ae66a9c03829dbfdf319bd03b801faa2892315f6"
 }

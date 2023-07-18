@@ -16,4 +16,7 @@ export * from './messages/msgsend'
 export * from './messages/vesting'
 export * from './messages/staking'
 export * from './messages/validator'
-export * from './messages/authz/generic'
+export * from './messages/authz'
+
+// Payload
+export * from './payload/index.js'

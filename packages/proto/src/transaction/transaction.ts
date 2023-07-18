@@ -1,9 +1,11 @@
 import { Keccak } from 'sha3'
+// import { StdFee, makeSignDoc, serializeSignDoc } from '@cosmjs/amino'
 import * as tx from '../proto/cosmos/tx/v1beta1/tx'
 import * as signing from '../proto/cosmos/tx/signing/v1beta1/signing'
 import * as coin from '../proto/cosmos/base/v1beta1/coin'
 import * as eth from '../proto/ethermint/crypto/v1/ethsecp256k1/keys'
 import * as secp from '../proto/cosmos/crypto/secp256k1/keys'
+// import { convertProtoMessageToObject } from '../amino/objectConverter.js'
 
 import { createAnyMessage, MessageGenerated } from '../messages/utils'
 
@@ -209,3 +211,75 @@ export function createTransaction(
     chainId,
   )
 }
+
+export function createStdFee(amount: string, denom: string, gasLimit: number) {
+  return {
+    amount: [
+      {
+        amount,
+        denom,
+      },
+    ],
+    gas: gasLimit.toString(),
+  }
+}
+
+// // Returns the hashed digest of the corresponding StdSignDoc.
+// // If the StdSignDoc cannot be generated (e.g. types are not
+// // supported), returns an empty string.
+// export function createStdSignDigestFromProto(
+//   messages: any,
+//   memo: string,
+//   fee: string,
+//   denom: string,
+//   gasLimit: number,
+//   sequence: number,
+//   accountNumber: number,
+//   chainId: string,
+// ) {
+//   try {
+//     const stdFee = createStdFee(fee, denom, gasLimit)
+//     const stdSignDoc = createStdSignDocFromProto(
+//       messages,
+//       stdFee,
+//       chainId,
+//       memo,
+//       sequence,
+//       accountNumber,
+//     )
+
+//     return keccak256ToBase64(serializeSignDoc(stdSignDoc))
+//   } catch {
+//     return ''
+//   }
+// }
+
+// export function createStdSignDocFromProto(
+//   protoMessages: any[],
+//   fee: StdFee,
+//   chainId: string,
+//   memo: string,
+//   sequence: number,
+//   accountNumber: number,
+// ) {
+//   const aminoMsgs = convertProtoMessagesToAmino(protoMessages)
+//   return makeSignDoc(aminoMsgs, fee, chainId, memo, accountNumber, sequence)
+// }
+
+// Returns a base-64-encoded keccak256 hash of the
+// given content bytes.
+export function keccak256ToBase64(content: Uint8Array) {
+  const hash = new Keccak(256)
+  hash.update(Buffer.from(content))
+  const bytes = hash.digest('binary')
+  return Buffer.from(bytes).toString('base64')
+}
+
+// // Converts an array of Protobuf MessageGenerated
+// // objects to Amino representations using the registry.
+// export function convertProtoMessagesToAmino(protoMessages: MessageGenerated[]) {
+//   return protoMessages.map((wrappedProtoMsg) => {
+//     const protoObject = convertProtoMessageToObject(wrappedProtoMsg.message)
+//     return AminoTypes.toAmino(protoObject)
+//   })
+// }

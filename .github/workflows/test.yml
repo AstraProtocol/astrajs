@@ -1,13 +1,14 @@
 name: Test
 on:
   push:
-    branches: [main]
+    branches: [astra]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [main]
+    branches: [astra]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    if: env.GIT_DIFF
     steps:
       - uses: actions/checkout@v2
 
@@ -23,13 +24,21 @@ jobs:
             yarn.lock
 
       - name: Install modules
-        run: yarn install
-        if: env.GIT_DIFF
+        run: npm install
 
-      - name: Yarn build is needed because the packages inter-dependencies
-        run: yarn build
-        if: env.GIT_DIFF
+      - name: Build and link packages
+        run: npm run build
+
+      - name: Start Docker local node
+        run: >-
+          cd packages/astrajs/src/tests &&
+          docker build -t astrajs-test . &&
+          docker create -p 1317:1317 -p 8545:8545 --name astrajs -t astrajs-test &&
+          docker start astrajs &&
+          cd ../../../..
+
+      - name: Wait for Docker to spin up
+        run: sleep 30
 
       - name: Run tests
-        run: yarn test
-        if: env.GIT_DIFF
+        run: npm run test
